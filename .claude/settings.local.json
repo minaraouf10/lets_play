@@ -3,7 +3,11 @@
     "allow": [
       "PowerShell(flutter analyze 2>&1)",
       "PowerShell(flutter test test/onboarding_cubit_test.dart 2>&1)",
-      "PowerShell(flutter test test/onboarding_widget_test.dart 2>&1)"
+      "PowerShell(flutter test test/onboarding_widget_test.dart 2>&1)",
+      "PowerShell(dart run flutter_native_splash:create 2>&1)",
+      "PowerShell(flutter test test/_splash_flow_test.dart 2>&1)",
+      "PowerShell(flutter pub get 2>&1)",
+      "PowerShell(flutter test test/_onboarding_grid_check.dart 2>&1)"
     ]
   }
 }

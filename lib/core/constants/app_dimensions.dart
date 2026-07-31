@@ -41,4 +41,11 @@ class AppDimensions {
   static const double socialIconSize = 28;
   static const double borderWidthSelected = 2;
   static const double borderWidth = 1;
+  static const double onboardingGridSpacing = 12;
+  static const double onboardingGridIconSize = 48;
+  static const double onboardingGridChildAspectRatio = 1.05;
+
+  // Splash.
+  static const double splashLogoWidth = 103;
+  static const double splashCanvasWidth = 375;
 }

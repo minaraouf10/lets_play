@@ -59,6 +59,7 @@ dependencies:
 
   # Routing
   go_router: ^14.2.0
+  flutter_svg: ^2.0.10
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +73,22 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   build_runner: ^2.4.11
   injectable_generator: ^2.6.1
+  flutter_native_splash: ^2.4.1
+
+# Native (pre-Flutter-engine) splash screen. This can only show ONE static
+# raster image — it cannot animate. It shows frame 1 of the brick build-up
+# (rasterized to PNG, see assets/images/splash/native_splash_frame1.png)
+# on the same yellow used by the in-app animated splash, so the handoff to
+# SplashPage (which continues frames 2-4 then the logo) is seamless.
+# Regenerate after changing the PNG or colors with:
+#   dart run flutter_native_splash:create
+flutter_native_splash:
+  color: "#FEDD05"
+  image: assets/images/splash/native_splash_frame1.png
+  android_12:
+    color: "#FEDD05"
+    image: assets/images/splash/native_splash_frame1.png
+  web: false
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -85,6 +102,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/icons/
+    - assets/images/splash/
+    - assets/images/intrto_icons/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

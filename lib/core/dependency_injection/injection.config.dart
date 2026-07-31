@@ -66,6 +66,7 @@ import '../../modules/onboarding/domain/usecases/save_onboarding_answers_usecase
     as _i444;
 import '../../modules/onboarding/presentation/cubit/onboarding_cubit.dart'
     as _i816;
+import '../../modules/splash/presentation/cubit/splash_cubit.dart' as _i510;
 import '../networking/dio_client.dart' as _i201;
 import '../networking/network_info.dart' as _i303;
 import '../routing/app_router.dart' as _i282;
@@ -79,6 +80,7 @@ extension GetItInjectableX on _i174.GetIt {
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final registerModule = _$RegisterModule();
+    gh.factory<_i510.SplashCubit>(() => _i510.SplashCubit());
     gh.lazySingleton<_i161.InternetConnection>(
       () => registerModule.internetConnection,
     );

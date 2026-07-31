@@ -5,6 +5,7 @@ class OnboardingAnswersModel extends OnboardingAnswers {
     super.reason,
     super.proficiency,
     super.dailyGoalMinutes,
+    super.dialect,
     super.startingPoint,
     super.isCompleted = false,
   });
@@ -14,6 +15,7 @@ class OnboardingAnswersModel extends OnboardingAnswers {
       reason: map['reason'] as String?,
       proficiency: map['proficiency'] as String?,
       dailyGoalMinutes: map['dailyGoalMinutes'] as int?,
+      dialect: map['dialect'] as String?,
       startingPoint: map['startingPoint'] as String?,
       isCompleted: map['isCompleted'] as bool? ?? false,
     );
@@ -24,6 +26,7 @@ class OnboardingAnswersModel extends OnboardingAnswers {
       reason: entity.reason,
       proficiency: entity.proficiency,
       dailyGoalMinutes: entity.dailyGoalMinutes,
+      dialect: entity.dialect,
       startingPoint: entity.startingPoint,
       isCompleted: entity.isCompleted,
     );
@@ -34,6 +37,7 @@ class OnboardingAnswersModel extends OnboardingAnswers {
       'reason': reason,
       'proficiency': proficiency,
       'dailyGoalMinutes': dailyGoalMinutes,
+      'dialect': dialect,
       'startingPoint': startingPoint,
       'isCompleted': isCompleted,
     };

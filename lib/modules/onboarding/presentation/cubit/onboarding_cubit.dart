@@ -43,6 +43,12 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     nextStep();
   }
 
+  void selectDialect(String id) {
+    final updated = state.answers.copyWith(dialect: id);
+    emit(state.copyWith(answers: updated));
+    nextStep();
+  }
+
   Future<void> selectStartingPoint(String id) async {
     final updated = state.answers.copyWith(startingPoint: id, isCompleted: true);
     emit(state.copyWith(answers: updated, status: OnboardingStatus.submitting));

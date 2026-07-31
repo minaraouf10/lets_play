@@ -26,4 +26,21 @@ class AppAssets {
   static const String speaker = '$_icons/speaker.png';
   static const String contacts = '$_icons/contacts.png';
   static const String cardHeart = '$_icons/card_heart.png';
+
+  // Splash
+  static const List<String> splashFrames = [
+    'assets/images/splash/lego_splash_1.svg',
+    'assets/images/splash/lego_splash_2.svg',
+    'assets/images/splash/lego_splash_3.svg',
+    'assets/images/splash/lego_splash_4.svg',
+  ];
+  static const String splashLogo = 'assets/images/splash/lego_splash_logo.svg';
+
+  // Onboarding — "why study Arabic?" reason icons.
+  static const String _introIcons = 'assets/images/intrto_icons';
+  static const String reasonFutureTrips = '$_introIcons/future_trips_icons.svg';
+  static const String reasonConnections = '$_introIcons/connections_icons.svg';
+  static const String reasonEducational = '$_introIcons/educational_icons.svg';
+  static const String reasonCareer = '$_introIcons/career_icons.svg';
+  static const String reasonOther = '$_introIcons/Other_icon.svg';
 }

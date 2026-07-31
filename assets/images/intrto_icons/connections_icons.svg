@@ -1,0 +1,13 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="29.75" cy="30.0078" r="29" fill="#51F25C" stroke="#51F25C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="29.75" cy="30.0078" r="29" fill="#00D035" stroke="#51F25C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M45.4237 5.27148C40.0817 10.4328 36.5332 19.5089 36.5332 29.852C36.5332 40.195 40.0817 49.2712 45.4237 54.4323C53.554 49.2712 58.9543 40.195 58.9543 29.852C58.9543 19.5089 53.554 10.4328 45.4237 5.27148Z" fill="#16A2FF" stroke="#3E32F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.75 29.852C0.75 40.195 6.15035 49.2712 14.2805 54.4323C19.6227 49.2712 23.1711 40.195 23.1711 29.852C23.1711 19.5089 19.6227 10.4328 14.2805 5.27148C6.15035 10.4328 0.75 19.5089 0.75 29.852Z" fill="#16A2FF" stroke="#3E32F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="29.75" cy="30.0078" r="29" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="29.75" cy="30.0078" rx="19" ry="29" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="29.75" cy="30.0078" rx="19" ry="29" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="29.8518" cy="29.852" rx="6.68088" ry="29.102" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="1.5" y1="29.2578" x2="58" y2="29.2578" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M45.4237 5.27148C40.0817 10.4328 36.5332 19.5089 36.5332 29.852C36.5332 40.195 40.0817 49.2712 45.4237 54.4323C53.554 49.2712 58.9543 40.195 58.9543 29.852C58.9543 19.5089 53.554 10.4328 45.4237 5.27148Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.75 29.852C0.75 40.195 6.15035 49.2712 14.2805 54.4323C19.6227 49.2712 23.1711 40.195 23.1711 29.852C23.1711 19.5089 19.6227 10.4328 14.2805 5.27148C6.15035 10.4328 0.75 19.5089 0.75 29.852Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

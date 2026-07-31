@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../modules/learning/presentation/pages/levels_map_page.dart';
 import '../../modules/authentication/presentation/pages/login_page.dart';
+import '../../modules/splash/presentation/pages/splash_page.dart';
 import '../../modules/games/presentation/pages/letter_game_page.dart';
 import '../../modules/onboarding/presentation/pages/onboarding_page.dart';
 import 'app_routes.dart';
@@ -17,8 +18,13 @@ import 'app_routes.dart';
 class AppRouter {
   AppRouter() {
     router = GoRouter(
-      initialLocation: AppRoutes.login,
+      initialLocation: AppRoutes.splash,
       routes: [
+        GoRoute(
+          path: AppRoutes.splash,
+          name: AppRoutes.splashName,
+          builder: (context, state) => const SplashPage(),
+        ),
         GoRoute(
           path: AppRoutes.login,
           name: AppRoutes.loginName,

@@ -7,6 +7,7 @@ import '../../domain/entities/onboarding_option.dart';
 import '../../domain/entities/onboarding_answers.dart';
 import '../../domain/entities/onboarding_step.dart';
 import '../models/onboarding_answers_model.dart';
+import '../../../../core/constants/app_assets.dart';
 
 abstract class OnboardingLocalDataSource {
   Future<List<OnboardingQuestion>> getQuestions();
@@ -26,18 +27,18 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
       bannerText: 'Why have you chosen to study Arabic?',
       bannerColor: Color(0xFF1E6FFF), // primary color
       options: [
-        OnboardingOption(id: 'future_trips', label: 'Get ready for future trips', assetPath: 'assets/images/icons/disc.png'),
-        OnboardingOption(id: 'connections', label: 'Establish connections', assetPath: 'assets/images/icons/contacts.png'),
-        OnboardingOption(id: 'education', label: 'Enhance my educational', assetPath: 'assets/images/icons/paper.png'),
-        OnboardingOption(id: 'career', label: 'Advance my career', assetPath: 'assets/images/icons/stairs.png'),
-        OnboardingOption(id: 'other', label: 'Other', assetPath: 'assets/images/icons/sparkle.png'),
+        OnboardingOption(id: 'future_trips', label: 'Get ready for future trips', assetPath: AppAssets.reasonFutureTrips),
+        OnboardingOption(id: 'connections', label: 'Establish connections', assetPath: AppAssets.reasonConnections),
+        OnboardingOption(id: 'education', label: 'Enhance my educational', assetPath: AppAssets.reasonEducational),
+        OnboardingOption(id: 'career', label: 'Advance my career', assetPath: AppAssets.reasonCareer),
+        OnboardingOption(id: 'other', label: 'Other', assetPath: AppAssets.reasonOther),
       ],
     ),
     // Step 2 – Proficiency
     OnboardingQuestion(
       step: OnboardingStep.proficiency,
       bannerText: 'What is your level of proficiency in Arabic?',
-      bannerColor: Color(0xFFF57C00), // levelTashkeel color
+      bannerColor: Color(0xFFFF7A00), // orange
       options: [
         OnboardingOption(id: 'beginner', label: "I'm a beginner in Arabic"),
         OnboardingOption(id: 'few_words', label: 'I know a few words'),
@@ -49,7 +50,7 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
     OnboardingQuestion(
       step: OnboardingStep.dailyGoal,
       bannerText: 'What is your daily goal for learning Arabic?',
-      bannerColor: Color(0xFF1E9BFF), // levelNumbers color
+      bannerColor: Color(0xFF00A3FF), // light blue
       options: [
         OnboardingOption(id: '10', label: '10 min/day', trailingLabel: 'Casual'),
         OnboardingOption(id: '15', label: '15 min/day', trailingLabel: 'Regular'),
@@ -57,12 +58,69 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
         OnboardingOption(id: '25', label: '25 min/day', trailingLabel: 'Intense'),
       ],
     ),
-    // Step 4 – Benefits (info only, empty options)
+    // Step 3.5 - Dialect
+    OnboardingQuestion(
+      step: OnboardingStep.dialect,
+      bannerText: 'Which dialect of Arabic are you interested in?',
+      bannerColor: Color(0xFFFFD700), // yellow
+      options: [
+        OnboardingOption(id: 'levantine', label: 'Levantine'),
+        OnboardingOption(id: 'egyptian', label: 'Egyptian'),
+        OnboardingOption(id: 'gulf', label: 'Gulf'),
+        OnboardingOption(id: 'msa', label: 'Modern standard arabic'),
+      ],
+    ),
+    // Step 3.6 - Launching
+    OnboardingQuestion(
+      step: OnboardingStep.launching,
+      bannerText: "Launching",
+      bannerColor: Color(0xFF0114FF), // Blue
+      options: [
+        OnboardingOption(
+          id: 'ad_free',
+          label: 'AD FREE!',
+          trailingLabel: 'No more interruptions\nwith LetsPlay+',
+          assetPath: 'assets/images/intrto_icons/ad_free.svg',
+        ),
+        OnboardingOption(
+          id: 'unlimited_hearts',
+          label: 'Unlimited Hearts',
+          trailingLabel: 'Play whenever with\nunlimited lives',
+          assetPath: 'assets/images/intrto_icons/unlimited_hearts.svg',
+        ),
+        OnboardingOption(
+          id: 'personalized',
+          label: 'Personalized\nLessons',
+          trailingLabel: 'Customized only for you\nand your needs',
+          assetPath: 'assets/images/intrto_icons/personalized_lessons.svg',
+        ),
+      ],
+    ),
+    // Step 4 – Benefits
     OnboardingQuestion(
       step: OnboardingStep.benefits,
       bannerText: "Here's what you can accomplish!",
-      bannerColor: Color(0xFF6C2BD9), // levelSentences color
-      options: [],
+      bannerColor: Color(0xFF6C2BD9), // purple
+      options: [
+        OnboardingOption(
+          id: 'engage',
+          label: 'Engage in confident conversations',
+          trailingLabel: 'Interact with people with less difficulty.',
+          assetPath: 'assets/images/intrto_icons/engage_in_confident.svg',
+        ),
+        OnboardingOption(
+          id: 'expand',
+          label: 'Expand your vocabulary significantly',
+          trailingLabel: 'Learn new words that will make you express yourself better.',
+          assetPath: 'assets/images/intrto_icons/significantly.svg',
+        ),
+        OnboardingOption(
+          id: 'cultivate',
+          label: 'Cultivate a consistent learning routine',
+          trailingLabel: 'Build the healthy habit of learning something new everyday.',
+          assetPath: 'assets/images/intrto_icons/cultivate_consistent.svg',
+        ),
+      ],
     ),
     // Step 5 – Starting Point
     OnboardingQuestion(
@@ -70,8 +128,16 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
       bannerText: "Now let's find the best place to start!",
       bannerColor: Color(0xFFFF2D6F), // accentPink
       options: [
-        OnboardingOption(id: 'from_scratch', label: 'Start from Scratch', assetPath: 'assets/images/icons/paper.png'),
-        OnboardingOption(id: 'find_my_place', label: 'Find my starting place', assetPath: 'assets/images/icons/magnifier.png'),
+        OnboardingOption(
+          id: 'from_scratch',
+          label: 'Start from Scratch',
+          assetPath: 'assets/images/intrto_icons/start_from_scratch.svg',
+        ),
+        OnboardingOption(
+          id: 'find_my_place',
+          label: 'Find my starting place',
+          assetPath: 'assets/images/intrto_icons/start_palceing.svg',
+        ),
       ],
     ),
   ];
