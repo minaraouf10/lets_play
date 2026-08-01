@@ -6,14 +6,8 @@ import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/dependency_injection/injection.dart';
 import '../../../../core/routing/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
-import '../../../../core/utils/validators.dart';
-import '../../../../core/widgets/app_button.dart';
-import '../../../../core/widgets/app_text_field.dart';
 import '../cubit/auth_cubit.dart';
-import '../widgets/login_footer.dart';
-import '../widgets/login_social_row.dart';
-import '../widgets/remember_me_row.dart';
+import '../widgets/login_form_body.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -86,81 +80,16 @@ class _LoginViewState extends State<_LoginView> {
               ),
               child: Form(
                 key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    const SizedBox(height: AppDimensions.spaceXl),
-                    Text(
-                      'Login',
-                      textAlign: TextAlign.center,
-                      style: AppTextStyles.headingLarge
-                          .copyWith(color: AppColors.textOnColor),
-                    ),
-                    const SizedBox(height: AppDimensions.spaceSm),
-                    Text(
-                      "You don't think you should login first and behave like human not robot.",
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      style: AppTextStyles.bodyMedium
-                          .copyWith(color: AppColors.textOnColor),
-                    ),
-                    const SizedBox(height: AppDimensions.spaceXl),
-                    AppTextField(
-                      controller: _emailController,
-                      hintText: 'Email address',
-                      prefixIcon: Icons.person_outline,
-                      keyboardType: TextInputType.emailAddress,
-                      textInputAction: TextInputAction.next,
-                      validator: Validators.email,
-                    ),
-                    const SizedBox(height: AppDimensions.spaceMd),
-                    AppTextField(
-                      controller: _passwordController,
-                      hintText: 'Password',
-                      prefixIcon: Icons.lock_outline,
-                      obscureText: true,
-                      textInputAction: TextInputAction.done,
-                      validator: Validators.password,
-                    ),
-                    const SizedBox(height: AppDimensions.spaceMd),
-                    RememberMeRow(
-                      onForgotPasswordPressed: () => _showComingSoon(context),
-                    ),
-                    const SizedBox(height: AppDimensions.spaceLg),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: AppColors.accentCyan,
-                          width: AppDimensions.borderWidthSelected,
-                        ),
-                        borderRadius:
-                            BorderRadius.circular(AppDimensions.radiusMd),
-                      ),
-                      child: AppButton(
-                        label: 'Sign in',
-                        color: AppColors.background,
-                        textColor: AppColors.textPrimary,
-                        isLoading: isLoading,
-                        onPressed: () => _submit(context),
-                      ),
-                    ),
-                    const SizedBox(height: AppDimensions.spaceMd),
-                    AppButton(
-                      label: 'Login with Facebook',
-                      color: AppColors.facebookSurface,
-                      textColor: AppColors.textPrimary,
-                      onPressed: () => _showComingSoon(context),
-                    ),
-                    const SizedBox(height: AppDimensions.spaceXl),
-                    LoginSocialRow(
-                      onTwitterPressed: () => _showComingSoon(context),
-                      onGooglePressed: () => _showComingSoon(context),
-                    ),
-                    const SizedBox(height: AppDimensions.spaceXl),
-                    LoginFooter(
-                      onSignUpPressed: () => _showComingSoon(context),
-                    ),
-                  ],
+                child: LoginFormBody(
+                  emailController: _emailController,
+                  passwordController: _passwordController,
+                  isLoading: isLoading,
+                  onSubmit: () => _submit(context),
+                  onForgotPassword: () => _showComingSoon(context),
+                  onFacebookLogin: () => _showComingSoon(context),
+                  onTwitter: () => _showComingSoon(context),
+                  onGoogle: () => _showComingSoon(context),
+                  onSignUp: () => _showComingSoon(context),
                 ),
               ),
             );
