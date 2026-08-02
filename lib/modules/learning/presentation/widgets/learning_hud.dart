@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/constants/app_assets.dart';
 import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/theme/app_text_styles.dart';
-
+import 'hud_chip.dart';
 /// Top HUD showing coins/stars, hearts and energy, using the real design
 /// icons. Values are placeholders wired to a gamification cubit later.
 class LearningHud extends StatelessWidget {
@@ -26,44 +26,22 @@ class LearningHud extends StatelessWidget {
       height: AppDimensions.hudHeight,
       child: Row(
         children: [
-          _HudChip(asset: AppAssets.coin, value: '$coins'),
+          HudChip(asset: AppAssets.hudCoin, value: '$coins'),
           const SizedBox(width: AppDimensions.spaceMd),
-          _HudChip(asset: AppAssets.heart, value: '$hearts'),
+          HudChip(asset: AppAssets.hudHeart, value: '$hearts'),
           const SizedBox(width: AppDimensions.spaceMd),
-          _HudChip(asset: AppAssets.energy, value: '$energy'),
+          HudChip(asset: AppAssets.hudEnergy, value: '$energy'),
           const Spacer(),
           IconButton(
             onPressed: onSettingsTap,
-            icon: Image.asset(
-              AppAssets.settings,
-              width: AppDimensions.iconLg,
-              height: AppDimensions.iconLg,
+            icon: SvgPicture.asset(
+              AppAssets.hudSettings,
+              width: AppDimensions.hudSettingsHeight,
+              height: AppDimensions.hudSettingsHeight,
             ),
           ),
         ],
       ),
-    );
-  }
-}
-
-class _HudChip extends StatelessWidget {
-  const _HudChip({required this.asset, required this.value});
-
-  final String asset;
-  final String value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.asset(
-          asset,
-          width: AppDimensions.iconMd,
-          height: AppDimensions.iconMd,
-        ),
-        const SizedBox(width: AppDimensions.spaceXs),
-        Text(value, style: AppTextStyles.bodyLarge),
-      ],
     );
   }
 }

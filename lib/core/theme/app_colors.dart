@@ -39,10 +39,16 @@ class AppColors {
   static const Color accentPink = Color(0xFFFF2D6F);
   static const Color facebookSurface = Color(0xFFFFFFFF);
   static const Color progressTrack = Color(0xFFE0E0E0);
-  static const Color progressFill = Color(0xFF9E9E9E);
+  // Layout shell / bottom navigation.
+  static const Color navBarBackground = Color(0xFFFFFFFF);
+  static const Color navBarBorder = Color(0xFFEDEDED);
+  static const Color navBarSelectedSurface = Color(0xFFF1F5FF);
 
   // Splash.
   static const Color splashYellow = Color(0xFFFEDD05);
   static const Color splashRed = Color(0xFFFF2D55);
   static const Color splashLogo = Color(0xFFFFDD00);
+
+  // Neo-brutalist accents (level headers, letter tiles).
+  static const Color ink = Color(0xFF000000);
 }

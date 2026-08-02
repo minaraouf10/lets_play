@@ -1,26 +1,16 @@
 part of 'splash_cubit.dart';
 
-enum SplashStage { bricks, logo, finished }
+enum SplashStage { gif, logo, finished }
 
 class SplashState extends Equatable {
+  const SplashState({required this.stage});
+
   final SplashStage stage;
-  final int frameIndex;
 
-  const SplashState({
-    required this.stage,
-    required this.frameIndex,
-  });
-
-  SplashState copyWith({
-    SplashStage? stage,
-    int? frameIndex,
-  }) {
-    return SplashState(
-      stage: stage ?? this.stage,
-      frameIndex: frameIndex ?? this.frameIndex,
-    );
+  SplashState copyWith({SplashStage? stage}) {
+    return SplashState(stage: stage ?? this.stage);
   }
 
   @override
-  List<Object?> get props => [stage, frameIndex];
+  List<Object?> get props => [stage];
 }

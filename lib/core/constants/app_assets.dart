@@ -5,17 +5,27 @@ class AppAssets {
 
   static const String _icons = 'assets/images/icons';
 
-  // HUD
-  static const String coin = '$_icons/sparkle.png'; // yellow star = coins/stars
-  static const String heart = '$_icons/heart.png';
-  static const String energy = '$_icons/bolt.png';
-  static const String settings = '$_icons/gear.png';
+  // Bottom navigation (layout shell) — full-color SVGs.
+  static const String _layoutIcons = 'assets/images/layout_icons';
+  static const String navHome = '$_layoutIcons/home_layout_icon.svg';
+  static const String navStar = '$_layoutIcons/star_layout_icon.svg';
+  static const String navCrown = '$_layoutIcons/crown_layout_icon.svg';
+  static const String navEmoji = '$_layoutIcons/emoji_layout_icon.svg';
 
-  // Bottom navigation
-  static const String home = '$_icons/home.png';
-  static const String sparkle = '$_icons/sparkle.png';
-  static const String crown = '$_icons/crown.png';
-  static const String smiley = '$_icons/smiley.png';
+  // Learning HUD — SVGs.
+  static const String _homeIcons = 'assets/images/home';
+  static const String hudHeart = '$_homeIcons/heart_icon.svg';
+  static const String hudEnergy = '$_homeIcons/voltage_icon.svg';
+  static const String hudSettings = '$_homeIcons/setting_icon.svg';
+
+  /// No coin icon exists under assets/images/home — the HUD deliberately
+  /// reuses the bottom-nav star.
+  static const String hudCoin = navStar;
+
+  // Lesson intro flow.
+  static const String lessonImage = '$_homeIcons/lesson_image.svg';
+  static const String tapOnTheBlocksImage =
+      '$_homeIcons/tap_on_the_blocks.png';
 
   // Onboarding / misc
   static const String paper = '$_icons/paper.png';
@@ -28,12 +38,7 @@ class AppAssets {
   static const String cardHeart = '$_icons/card_heart.png';
 
   // Splash
-  static const List<String> splashFrames = [
-    'assets/images/splash/lego_splash_1.svg',
-    'assets/images/splash/lego_splash_2.svg',
-    'assets/images/splash/lego_splash_3.svg',
-    'assets/images/splash/lego_splash_4.svg',
-  ];
+  static const String splashGif = 'assets/images/splash/splash.gif';
   static const String splashLogo = 'assets/images/splash/lego_splash_logo.svg';
 
   // Onboarding — "why study Arabic?" reason icons.

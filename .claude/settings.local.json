@@ -7,7 +7,8 @@
       "PowerShell(dart run flutter_native_splash:create 2>&1)",
       "PowerShell(flutter test test/_splash_flow_test.dart 2>&1)",
       "PowerShell(flutter pub get 2>&1)",
-      "PowerShell(flutter test test/_onboarding_grid_check.dart 2>&1)"
+      "PowerShell(flutter test test/_onboarding_grid_check.dart 2>&1)",
+      "PowerShell(flutter test test/_gen_native_splash_png.dart 2>&1)"
     ]
   }
 }

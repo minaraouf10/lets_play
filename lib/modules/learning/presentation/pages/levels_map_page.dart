@@ -28,7 +28,7 @@ class _LevelsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: SafeArea(bottom: false,
         child: Column(
           children: [
             const Padding(
@@ -37,7 +37,7 @@ class _LevelsView extends StatelessWidget {
                 vertical: AppDimensions.spaceSm,
               ),
               // Placeholder values; wired to a gamification cubit later.
-              child: LearningHud(coins: 13500, hearts: 6, energy: 10),
+              child: LearningHud(coins: 135, hearts: 6, energy: 10),
             ),
             Expanded(
               child: BlocBuilder<LevelsCubit, LevelsState>(

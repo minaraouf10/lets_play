@@ -5,9 +5,8 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/dependency_injection/injection.dart';
 import '../../../../core/routing/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/constants/app_assets.dart';
 import '../cubit/splash_cubit.dart';
-import '../widgets/splash_brick_frame.dart';
+import '../widgets/splash_gif_view.dart';
 import '../widgets/splash_logo_card.dart';
 
 class SplashPage extends StatelessWidget {
@@ -47,25 +46,12 @@ class _SplashView extends StatelessWidget {
               }
               return child;
             },
-            child: _buildBody(context, state),
+            child: state.stage == SplashStage.gif
+                ? const SplashGifView(key: ValueKey('gif'))
+                : const SplashLogoCard(key: ValueKey('logo')),
           ),
         );
       },
-    );
-  }
-
-  Widget _buildBody(BuildContext context, SplashState state) {
-    if (state.stage == SplashStage.logo || state.stage == SplashStage.finished) {
-      return SplashLogoCard(
-        key: const ValueKey('logo'),
-        onTap: () => context.read<SplashCubit>().continueFromLogo(),
-      );
-    }
-
-    final framePath = AppAssets.splashFrames[state.frameIndex];
-    return SplashBrickFrame(
-      key: ValueKey(state.frameIndex),
-      assetPath: framePath,
     );
   }
 }

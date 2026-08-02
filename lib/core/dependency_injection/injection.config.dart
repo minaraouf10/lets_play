@@ -47,6 +47,8 @@ import '../../modules/learning/domain/repositories/learning_repository.dart'
     as _i917;
 import '../../modules/learning/domain/usecases/get_levels_usecase.dart'
     as _i727;
+import '../../modules/learning/presentation/cubit/lesson_intro_cubit.dart'
+    as _i1030;
 import '../../modules/learning/presentation/cubit/levels_cubit.dart' as _i472;
 import '../../modules/onboarding/data/datasources/mock_onboarding_remote_datasource.dart'
     as _i842;
@@ -80,6 +82,7 @@ extension GetItInjectableX on _i174.GetIt {
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final registerModule = _$RegisterModule();
+    gh.factory<_i1030.LessonIntroCubit>(() => _i1030.LessonIntroCubit());
     gh.factory<_i510.SplashCubit>(() => _i510.SplashCubit());
     gh.lazySingleton<_i161.InternetConnection>(
       () => registerModule.internetConnection,

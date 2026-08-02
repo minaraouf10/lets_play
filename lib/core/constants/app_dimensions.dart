@@ -31,8 +31,30 @@ class AppDimensions {
   static const double letterGridSpacing = 8;
   static const int letterGridColumns = 5;
 
+  // Word/sentence grid (Level 4-5): fewer, wider cards than the letter grid.
+  static const int wordGridColumns = 2;
+  static const double wordGridAspectRatio = 2.0;
+
+  // Neo-brutalist borders/shadows (level headers, letter tiles).
+  static const double neoBorderWidth = 2;
+  static const double neoBorderWidthSm = 2;
+  static const double neoShadowOffset = 4;
+  static const double neoShadowOffsetSm = 2;
+
   // HUD.
   static const double hudHeight = 48;
+
+  // Bottom navigation (layout shell).
+  static const double navBarHeight = 64;
+  static const double navBarIconHeight = 28;
+  static const double navBarBorderWidth = 1;
+  static const double navBarTapRadius = 32;
+  static const double navIconOpacityActive = 1;
+  static const double navIconOpacityInactive = 0.45;
+
+  // Learning HUD.
+  static const double hudIconHeight = 24;
+  static const double hudSettingsHeight = 29;
 
   // Onboarding & Auth.
   static const double progressBarHeight = 12;

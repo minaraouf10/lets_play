@@ -7,7 +7,7 @@ import '../models/level_model.dart';
 /// Offline-first source of truth for the MVP.
 ///
 /// Per the brief, only a few sample lessons per level ship now
-/// (L1=5, L2=3, L3=2, L4=2, L5=1). Adding the full content later is a
+/// (L1=5, L2=3, L3=2, L4=4, L5=4). Adding the full content later is a
 /// data change only — no architecture changes.
 abstract class LearningLocalDataSource {
   Future<List<LevelModel>> getLevels();
@@ -36,12 +36,9 @@ class LearningLocalDataSourceImpl implements LearningLocalDataSource {
             isUnlocked: true),
         LessonModel(
             id: 'l1_ba', glyph: 'ب', transliteration: 'b', isUnlocked: true),
-        LessonModel(
-            id: 'l1_ta', glyph: 'ت', transliteration: 't', isUnlocked: true),
-        LessonModel(
-            id: 'l1_tha', glyph: 'ث', transliteration: 'th', isUnlocked: true),
-        LessonModel(
-            id: 'l1_jeem', glyph: 'ج', transliteration: 'j', isUnlocked: true),
+        LessonModel(id: 'l1_ta', glyph: 'ت', transliteration: 't'),
+        LessonModel(id: 'l1_tha', glyph: 'ث', transliteration: 'th'),
+        LessonModel(id: 'l1_jeem', glyph: 'ج', transliteration: 'j'),
       ],
     ),
     LevelModel(
@@ -74,8 +71,19 @@ class LearningLocalDataSourceImpl implements LearningLocalDataSource {
       description:
           'Learn all the words and their usage and unlock new worlds.',
       lessons: [
-        LessonModel(id: 'l4_fi', glyph: 'في', transliteration: '2 letters'),
-        LessonModel(id: 'l4_rajul', glyph: 'رجل', transliteration: '3 letters'),
+        LessonModel(
+            id: 'l4_rajul', glyph: 'رجل', transliteration: '3 letter words'),
+        LessonModel(
+            id: 'l4_fi',
+            glyph: 'في',
+            transliteration: '2 letter words',
+            isUnlocked: true),
+        LessonModel(
+            id: 'l4_jamad', glyph: 'جماد', transliteration: '4 letter words'),
+        LessonModel(
+            id: 'l4_hayawan',
+            glyph: 'حيوان',
+            transliteration: '5 letter words'),
       ],
     ),
     LevelModel(
@@ -86,9 +94,20 @@ class LearningLocalDataSourceImpl implements LearningLocalDataSource {
           'Learn all the phrases and their usage and unlock new worlds.',
       lessons: [
         LessonModel(
+            id: 'l5_directions',
+            glyph: 'الاتجاهات',
+            transliteration: 'Directions'),
+        LessonModel(
             id: 'l5_intro',
             glyph: 'عرف نفسك',
-            transliteration: 'Introduce Yourself'),
+            transliteration: 'Introduce Yourself',
+            isUnlocked: true),
+        LessonModel(
+            id: 'l5_restaurants',
+            glyph: 'مطاعم',
+            transliteration: 'Restaurants'),
+        LessonModel(
+            id: 'l5_travel', glyph: 'السفر', transliteration: 'Travel'),
       ],
     ),
   ];
