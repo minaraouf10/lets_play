@@ -1,12 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:injectable/injectable.dart';
 
-import '../../../../core/errors/exceptions.dart';
-import '../../../../core/errors/failures.dart';
-import '../../../../core/networking/network_info.dart';
-import '../../domain/entities/user_entity.dart';
-import '../../domain/repositories/auth_repository.dart';
-import '../datasources/auth_remote_datasource.dart';
+import '../../../../core/utils/app_imports.dart';
+
 
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {

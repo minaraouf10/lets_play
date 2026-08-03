@@ -1,7 +1,8 @@
+
+
 import 'package:dartz/dartz.dart';
 
-import '../../../../core/errors/failures.dart';
-import '../entities/user_entity.dart';
+import '../../../../core/utils/app_imports.dart';
 
 /// Domain contract. The data layer provides the implementation; the
 /// presentation layer depends only on this abstraction (DIP).

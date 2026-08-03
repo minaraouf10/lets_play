@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
 
-import '../errors/failures.dart';
+import 'app_imports.dart';
 
 /// Base contract for all use cases.
 /// [T] is the success value, [Params] the input.

@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/theme/app_colors.dart';
+import '../../../../core/utils/app_imports.dart';
+
 import '../models/layout_nav_destination.dart';
 import 'layout_nav_item.dart';
 

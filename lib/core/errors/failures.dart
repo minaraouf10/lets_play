@@ -1,4 +1,5 @@
-import 'package:equatable/equatable.dart';
+
+import 'package:game_test/core/utils/app_imports.dart';
 
 /// Domain-level errors. Repositories return `Either<Failure, T>` so the
 /// presentation layer never sees raw exceptions.

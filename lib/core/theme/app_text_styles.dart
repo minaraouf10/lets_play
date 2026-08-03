@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import '../utils/app_imports.dart';
 
-import 'app_colors.dart';
 
 /// Typography scale. Font family can be swapped centrally later
 /// (e.g. a rounded kid-friendly Arabic face for RTL).

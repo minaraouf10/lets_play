@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
+
 
 class OnboardingErrorView extends StatelessWidget {
   const OnboardingErrorView({super.key, this.message, required this.onRetry});

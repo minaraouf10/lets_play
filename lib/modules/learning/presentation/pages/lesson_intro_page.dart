@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/dependency_injection/injection.dart';
-import '../../domain/entities/level_type.dart';
 import '../cubit/lesson_intro_cubit.dart';
 import '../widgets/lesson_intro_lesson_step.dart';
 import '../widgets/lesson_intro_play_step.dart';

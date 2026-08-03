@@ -1,14 +1,4 @@
-import 'package:go_router/go_router.dart';
-import 'package:injectable/injectable.dart';
-
-import '../../modules/authentication/presentation/pages/login_page.dart';
-import '../../modules/splash/presentation/pages/splash_page.dart';
-import '../../modules/games/presentation/pages/letter_game_page.dart';
-import '../../modules/learning/domain/entities/level_type.dart';
-import '../../modules/learning/presentation/pages/lesson_intro_page.dart';
-import '../../modules/onboarding/presentation/pages/onboarding_page.dart';
-import 'app_routes.dart';
-import 'app_shell_route.dart';
+import '../utils/app_imports.dart';
 
 /// Wraps [GoRouter].
 ///
@@ -55,6 +45,14 @@ class AppRouter {
           name: AppRoutes.letterGameName,
           builder: (context, state) => LetterGamePage(
             lessonId: state.uri.queryParameters['lessonId'] ?? '',
+          ),
+        ),
+        GoRoute(
+          path: AppRoutes.greatJob,
+          name: AppRoutes.greatJobName,
+          builder: (context, state) => GreatJobPage(
+            lessonId: state.uri.queryParameters['lessonId'] ?? '',
+            userName: state.uri.queryParameters['userName'] ?? 'Student',
           ),
         ),
       ],

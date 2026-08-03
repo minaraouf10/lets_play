@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_dimensions.dart';
 import '../../domain/entities/level_entity.dart';
 import 'lessons_grid.dart';
 import 'level_header.dart';

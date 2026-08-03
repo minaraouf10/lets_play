@@ -1,8 +1,6 @@
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/utils/app_imports.dart';
+
 
 class LoginFooter extends StatelessWidget {
   const LoginFooter({

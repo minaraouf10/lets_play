@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_assets.dart';
-import '../../../../core/constants/app_dimensions.dart';
 import 'hud_chip.dart';
 /// Top HUD showing coins/stars, hearts and energy, using the real design
 /// icons. Values are placeholders wired to a gamification cubit later.

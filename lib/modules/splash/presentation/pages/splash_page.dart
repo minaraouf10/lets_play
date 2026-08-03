@@ -1,10 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/dependency_injection/injection.dart';
-import '../../../../core/routing/app_routes.dart';
-import '../../../../core/theme/app_colors.dart';
 import '../cubit/splash_cubit.dart';
 import '../widgets/splash_gif_view.dart';
 import '../widgets/splash_logo_card.dart';

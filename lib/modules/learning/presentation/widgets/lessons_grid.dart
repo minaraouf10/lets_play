@@ -1,12 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/routing/app_routes.dart';
 import '../../domain/entities/level_entity.dart';
-import '../../domain/entities/level_type.dart';
 import 'letter_tile.dart';
-import 'level_color_mapper.dart';
 
 /// Level 1-3 (letters/tashkeel/numbers) are short glyphs, shown as a dense
 /// 5-column grid of square tiles. Level 4-5 (words/sentences) hold longer

@@ -1,11 +1,6 @@
-import 'package:go_router/go_router.dart';
+import '../utils/app_imports.dart';
 
-import '../../modules/layout/presentation/pages/achievements_page.dart';
-import '../../modules/layout/presentation/pages/layout_page.dart';
-import '../../modules/layout/presentation/pages/leaderboard_page.dart';
-import '../../modules/layout/presentation/pages/profile_page.dart';
-import '../../modules/learning/presentation/pages/levels_map_page.dart';
-import 'app_routes.dart';
+
 
 /// The 4-tab shell. Each branch owns its own Navigator, so a push inside a
 /// tab keeps the bottom bar visible and keeps that tab's stack independent.

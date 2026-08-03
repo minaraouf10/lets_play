@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
+
 
 import '../widgets/coming_soon_view.dart';
 

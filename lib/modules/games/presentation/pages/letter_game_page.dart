@@ -1,12 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/dependency_injection/injection.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/utils/app_imports.dart';
 import '../../../../core/widgets/app_loading.dart';
+
 import '../cubit/letter_game_cubit.dart';
 import '../widgets/block_grid.dart';
 import '../widgets/brick_palette.dart';
@@ -98,7 +92,13 @@ class _LetterGameView extends StatelessWidget {
                       transliteration: puzzle.transliteration,
                       stars: state.stars,
                       onReplay: cubit.reset,
-                      onDone: () => context.pop(),
+                      onDone: () => context.pushReplacementNamed(
+                        AppRoutes.greatJobName,
+                        queryParameters: {
+                          'lessonId': puzzle.lessonId,
+                          'userName': 'Malak',
+                        },
+                      ),
                     ),
                 ],
               );

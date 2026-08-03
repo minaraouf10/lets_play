@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
+
 import '../../domain/entities/onboarding_option.dart';
 
 class OptionTile extends StatelessWidget {

@@ -3,7 +3,7 @@
 class AppAssets {
   const AppAssets._();
 
-  static const String _icons = 'assets/images/icons';
+  //static const String _icons = 'assets/images/icons';
 
   // Bottom navigation (layout shell) — full-color SVGs.
   static const String _layoutIcons = 'assets/images/layout_icons';
@@ -26,16 +26,18 @@ class AppAssets {
   static const String lessonImage = '$_homeIcons/lesson_image.svg';
   static const String tapOnTheBlocksImage =
       '$_homeIcons/tap_on_the_blocks.png';
+  static const String greatJobCharacter =
+      '$_homeIcons/great_job_image.png';
 
   // Onboarding / misc
-  static const String paper = '$_icons/paper.png';
-  static const String disc = '$_icons/disc.png';
-  static const String magnifier = '$_icons/magnifier.png';
-  static const String stairs = '$_icons/stairs.png';
-  static const String timer = '$_icons/timer.png';
-  static const String speaker = '$_icons/speaker.png';
-  static const String contacts = '$_icons/contacts.png';
-  static const String cardHeart = '$_icons/card_heart.png';
+  // static const String paper = '$_icons/paper.png';
+  // static const String disc = '$_icons/disc.png';
+  // static const String magnifier = '$_icons/magnifier.png';
+  // static const String stairs = '$_icons/stairs.png';
+  // static const String timer = '$_icons/timer.png';
+  // static const String speaker = '$_icons/speaker.png';
+  // static const String contacts = '$_icons/contacts.png';
+  // static const String cardHeart = '$_icons/card_heart.png';
 
   // Splash
   static const String splashGif = 'assets/images/splash/splash.gif';

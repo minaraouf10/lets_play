@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_assets.dart';
 
 /// Plays the animated LEGO build-up. Flutter decodes and animates
 /// multi-frame GIFs natively via [Image] — no extra package needed.

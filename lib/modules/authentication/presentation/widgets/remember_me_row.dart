@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
 
 class RememberMeRow extends StatefulWidget {
   const RememberMeRow({

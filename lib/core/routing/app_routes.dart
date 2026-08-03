@@ -10,6 +10,7 @@ class AppRoutes {
   static const String leaderboard = '/leaderboard';
   static const String profile = '/profile';
   static const String letterGame = '/game/letter';
+  static const String greatJob = '/game/great-job';
   static const String lessonIntro = '/lesson/intro';
 
   static const String splashName = 'splash';
@@ -20,5 +21,6 @@ class AppRoutes {
   static const String leaderboardName = 'leaderboard';
   static const String profileName = 'profile';
   static const String letterGameName = 'letterGame';
+  static const String greatJobName = 'greatJob';
   static const String lessonIntroName = 'lessonIntro';
 }

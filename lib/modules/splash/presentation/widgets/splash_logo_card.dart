@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../core/constants/app_assets.dart';
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/theme/app_colors.dart';
+import '../../../../core/utils/app_imports.dart';
+
 
 /// The resting frame after the GIF finishes — shown for a fixed duration
 /// (see [SplashCubit.logoDuration]) before auto-advancing to Login.

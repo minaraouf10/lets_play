@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
+
 
 class OnboardingBanner extends StatelessWidget {
   const OnboardingBanner({super.key, required this.color, required this.text});

@@ -1,5 +1,4 @@
-import 'package:injectable/injectable.dart';
-import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import '../utils/app_imports.dart';
 
 /// Registers third-party singletons that we don't own (can'annotate).
 @module

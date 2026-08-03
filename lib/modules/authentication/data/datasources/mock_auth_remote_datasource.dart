@@ -1,8 +1,6 @@
 import 'dart:async';
-import 'package:injectable/injectable.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../models/user_model.dart';
-import 'auth_remote_datasource.dart';
 
 /// Mock implementation of [AuthRemoteDataSource] to run offline without Firebase.
 @LazySingleton(as: AuthRemoteDataSource)

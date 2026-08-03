@@ -1,14 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
-
-import '../../../../core/constants/app_assets.dart';
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/app_button.dart';
-import '../../domain/entities/level_type.dart';
-import 'level_color_mapper.dart';
-import 'lesson_intro_info_box.dart';
+import '../../../../core/utils/app_imports.dart';
 
 /// Step 1 of the lesson intro flow: level-color gradient background, the
 /// lesson illustration, the lesson/level info card, and a continue button.
@@ -49,11 +39,35 @@ class LessonIntroLessonStep extends StatelessWidget {
                 levelNumber: levelType.number,
               ),
               const SizedBox(height: AppDimensions.spaceLg),
-              AppButton(
-                label: 'CONTINUE',
-                color: AppColors.ink,
-                onPressed: onContinue,
+              SizedBox(
+                width: double.infinity,
+                height: AppDimensions.buttonHeight,
+                child: OutlinedButton(
+                  onPressed: onContinue,
+                  style: OutlinedButton.styleFrom(
+                    backgroundColor: AppColors.background,
+                    side: const BorderSide(
+                      color: AppColors.ink,
+                      width: AppDimensions.neoBorderWidth,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(AppDimensions.radiusMd),
+                    ),
+                  ),
+                  child: Text(
+                    'CONTINUE',
+                    style: AppTextStyles.button.copyWith(
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+                ),
               ),
+              // AppButton(
+              //   label: 'CONTINUE',
+              //   textColor:AppColors.textSecondary,
+              //   color: AppColors.navBarBackground,
+              //   onPressed: onContinue,
+              // ),
             ],
           ),
         ),

@@ -1,11 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:injectable/injectable.dart';
-
-import '../../../../core/utils/usecase.dart';
-import '../../domain/entities/user_entity.dart';
-import '../../domain/usecases/login_usecase.dart';
-import '../../domain/usecases/logout_usecase.dart';
+import '../../../../core/utils/app_imports.dart';
 
 part 'auth_state.dart';
 

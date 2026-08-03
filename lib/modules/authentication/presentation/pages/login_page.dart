@@ -1,13 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/dependency_injection/injection.dart';
-import '../../../../core/routing/app_routes.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../cubit/auth_cubit.dart';
-import '../widgets/login_form_body.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -41,12 +33,13 @@ class _LoginViewState extends State<_LoginView> {
   }
 
   void _submit(BuildContext context) {
-    if (_formKey.currentState?.validate() ?? false) {
-      context.read<AuthCubit>().login(
-            email: _emailController.text.trim(),
-            password: _passwordController.text,
-          );
-    }
+    // if (_formKey.currentState?.validate() ?? false) {
+    //   context.read<AuthCubit>().login(
+    //         email: _emailController.text.trim(),
+    //         password: _passwordController.text,
+    //       );
+    // }
+    context.goNamed(AppRoutes.onboardingName);
   }
 
   void _showComingSoon(BuildContext context) {
@@ -62,13 +55,13 @@ class _LoginViewState extends State<_LoginView> {
       body: SafeArea(
         child: BlocConsumer<AuthCubit, AuthState>(
           listener: (context, state) {
-            if (state.status == AuthStatus.authenticated) {
+           // if (state.status == AuthStatus.authenticated) {
               context.goNamed(AppRoutes.onboardingName);
-            } else if (state.status == AuthStatus.error) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(state.errorMessage ?? 'Login failed')),
-              );
-            }
+            // } else if (state.status == AuthStatus.error) {
+            //   ScaffoldMessenger.of(context).showSnackBar(
+            //     SnackBar(content: Text(state.errorMessage ?? 'Login failed')),
+            //   );
+            // }
           },
           builder: (context, state) {
             final isLoading = state.status == AuthStatus.loading;

@@ -1,4 +1,5 @@
-import 'package:equatable/equatable.dart';
+
+import '../../../../core/utils/app_imports.dart';
 
 /// Pure domain user. No Firebase types leak into the domain layer.
 class UserEntity extends Equatable {

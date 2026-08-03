@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_dimensions.dart';
 import '../models/layout_nav_destination.dart';
 
 /// One tab. The SVGs are multi-color illustrations, so selection is shown

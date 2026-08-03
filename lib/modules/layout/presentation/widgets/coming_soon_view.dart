@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/theme/app_text_styles.dart';
 
 /// Shared placeholder body for tabs that are not implemented yet.
 class ComingSoonView extends StatelessWidget {

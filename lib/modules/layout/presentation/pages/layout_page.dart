@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import '../../../../core/utils/app_imports.dart';
+
 
 import '../widgets/layout_bottom_nav_bar.dart';
 

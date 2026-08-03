@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/theme/app_colors.dart';
-import '../../domain/entities/level_type.dart';
 
 /// Keeps the domain UI-agnostic: colors are resolved only in presentation.
 extension LevelTypeColor on LevelType {

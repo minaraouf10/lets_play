@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/utils/app_imports.dart';
+
 import '../../domain/entities/onboarding_option.dart';
 
 class StartingPointCard extends StatelessWidget {

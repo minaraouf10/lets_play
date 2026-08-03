@@ -1,6 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
-
-import '../../domain/entities/user_entity.dart';
+import '../../../../core/utils/app_imports.dart';
 
 /// Data-layer model. Converts Firebase [User] into a domain [UserEntity]
 /// and (de)serialises for Firestore.

@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/constants/app_assets.dart';
+import '../../../../core/utils/app_imports.dart';
+
 import '../../domain/entities/onboarding_question.dart';
 import '../cubit/onboarding_cubit.dart';
 import 'premium_feature_card.dart';

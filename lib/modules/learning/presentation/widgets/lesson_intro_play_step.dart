@@ -1,16 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_assets.dart';
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/routing/app_routes.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
-import '../../domain/entities/level_type.dart';
-import 'level_color_mapper.dart';
 
-/// Step 2 of the lesson intro flow: "tap the blocks" instructions; LETS
-/// PLAY replaces this route with the actual puzzle screen.
+
+
 class LessonIntroPlayStep extends StatelessWidget {
   const LessonIntroPlayStep({
     super.key,
@@ -39,7 +31,8 @@ class LessonIntroPlayStep extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.all(AppDimensions.spaceMd),
+                height: 150,
+                //padding: const EdgeInsets.all(AppDimensions.spaceMd),
                 decoration: BoxDecoration(
                   color: AppColors.background,
                   borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
@@ -49,6 +42,7 @@ class LessonIntroPlayStep extends StatelessWidget {
                   ),
                 ),
                 child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'Tap on the blocks',
@@ -64,7 +58,7 @@ class LessonIntroPlayStep extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Image.asset(AppAssets.tapOnTheBlocksImage),
+                child: Image.asset(AppAssets.tapOnTheBlocksImage,fit: BoxFit.fitHeight,),
               ),
               const SizedBox(height: AppDimensions.spaceLg),
               SizedBox(

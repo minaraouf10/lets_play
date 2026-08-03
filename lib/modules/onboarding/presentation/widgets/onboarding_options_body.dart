@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import '../../../../core/constants/app_dimensions.dart';
+import '../../../../core/utils/app_imports.dart';
+
 import '../../domain/entities/onboarding_option.dart';
 import '../../domain/entities/onboarding_question.dart';
 import '../../domain/entities/onboarding_step.dart';

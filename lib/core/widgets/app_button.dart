@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
+import '../utils/app_imports.dart';
 
-import '../constants/app_dimensions.dart';
-import '../theme/app_colors.dart';
-import '../theme/app_text_styles.dart';
 
 /// Reusable primary button with loading state. No hardcoded sizes.
 class AppButton extends StatelessWidget {

@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
 import '../../domain/entities/level_entity.dart';
-import 'level_color_mapper.dart';
 
 /// Colored, neo-brutalist banner that heads each level section on the map:
 /// solid level color, black border, hard offset shadow (no blur).

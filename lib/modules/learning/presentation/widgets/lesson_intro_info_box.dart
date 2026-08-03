@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
+import '../../../../core/utils/app_imports.dart';
 
-import '../../../../core/constants/app_dimensions.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
 
 /// Neo-brutalist card showing "Lesson N" (badged) and "Level N" — the info
 /// box shown on the first step of the lesson intro flow.
@@ -23,7 +20,7 @@ class LessonInfoBox extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(AppDimensions.spaceMd),
       decoration: BoxDecoration(
-        color: AppColors.background,
+        color: AppColors.splashYellow,
         borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
         border: Border.all(
           color: AppColors.ink,
@@ -53,6 +50,7 @@ class LessonInfoBox extends StatelessWidget {
                     horizontal: AppDimensions.spaceSm,
                   ),
                   decoration: BoxDecoration(
+                    color: AppColors.background,
                     border: Border.all(
                       color: AppColors.ink,
                       width: AppDimensions.neoBorderWidthSm,
@@ -64,7 +62,9 @@ class LessonInfoBox extends StatelessWidget {
               ],
             ),
             const SizedBox(height: AppDimensions.spaceXs),
-            Text('Level $levelNumber', style: AppTextStyles.bodyMedium),
+            Text('Level $levelNumber', style: AppTextStyles.bodyMedium.copyWith(
+              color: AppColors.textPrimary
+            )),
           ],
         ),
       ),

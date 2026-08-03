@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import '../utils/app_imports.dart';
 
-import '../theme/app_colors.dart';
 
 /// Shared loading indicator.
 class AppLoading extends StatelessWidget {

@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
+import '../utils/app_imports.dart';
 
-import '../constants/app_dimensions.dart';
-import 'app_colors.dart';
-import 'app_text_styles.dart';
 
 /// Central ThemeData. Widgets read from Theme.of(context) rather than
 /// hardcoding colors/sizes.
