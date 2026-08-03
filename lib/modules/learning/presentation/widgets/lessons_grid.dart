@@ -1,6 +1,5 @@
 import '../../../../core/utils/app_imports.dart';
 
-import '../../domain/entities/level_entity.dart';
 import 'letter_tile.dart';
 
 /// Level 1-3 (letters/tashkeel/numbers) are short glyphs, shown as a dense

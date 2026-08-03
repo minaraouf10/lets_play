@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
 import 'block_position.dart';
+import 'puzzle_brick.dart';
 
-/// A "build the letter" puzzle: a grid where a set of [target] cells forms
-/// the shape of [glyph]. The child fills cells with bricks until the filled
-/// set matches [target].
+/// A "build the letter" puzzle: draggable bricks that snap into their target
+/// positions to assemble [glyph].
 class LetterPuzzle extends Equatable {
   const LetterPuzzle({
     required this.lessonId,
@@ -13,6 +13,8 @@ class LetterPuzzle extends Equatable {
     required this.rows,
     required this.cols,
     required this.target,
+    required this.bricks,
+    this.seconds = 30,
   });
 
   final String lessonId;
@@ -21,10 +23,26 @@ class LetterPuzzle extends Equatable {
   final int rows;
   final int cols;
 
-  /// The cells that together form the letter shape.
+  /// The cells that together form the letter shape (union of all bricks' cells
+  /// at their targetOrigin). Used for progress calculation.
   final Set<BlockPosition> target;
 
+  /// The draggable bricks that make up this puzzle.
+  final List<PuzzleBrick> bricks;
+
+  /// Countdown allowance in seconds.
+  final int seconds;
+
   @override
-  List<Object?> get props =>
-      [lessonId, glyph, transliteration, rows, cols, target];
+  List<Object?> get props => [
+        lessonId,
+        glyph,
+        transliteration,
+        rows,
+        cols,
+        target,
+        bricks,
+        seconds,
+      ];
 }
+

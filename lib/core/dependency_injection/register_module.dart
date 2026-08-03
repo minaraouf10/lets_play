@@ -15,4 +15,7 @@ abstract class RegisterModule {
 
   @lazySingleton
   InternetConnection get internetConnection => InternetConnection();
+
+  @lazySingleton
+  FlutterTts get flutterTts => FlutterTts();
 }

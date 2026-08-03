@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -lt ~/Downloads/*.gif ~/Desktop/*.gif \"/c/Users/Mina.Raof/Downloads/\"*.gif \"/c/Users/Mina.Raof/Desktop/\"*.gif 2>/dev/null | head -20; echo \"---project---\"; find c:/android_project/game_test -iname \"*.gif\" -not -path \"*/build/*\" 2>/dev/null | head -20)",
+      "Read(//c/Users/Mina.Raof/Downloads/**)",
+      "Bash(ffmpeg -version)",
+      "Bash(python -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
+      "Bash(flutter devices *)",
+      "Bash(flutter pub *)",
+      "Bash(sed -i \"/^import '..\\\\/..\\\\/domain\\\\/entities\\\\/level_entity.dart';$/d\" lib/modules/learning/presentation/widgets/lessons_grid.dart lib/modules/learning/presentation/widgets/level_header.dart lib/modules/learning/presentation/widgets/levels_list.dart)",
+      "Bash(sed -i \"/^import '..\\\\/..\\\\/domain\\\\/entities\\\\/lesson_entity.dart';$/d\" lib/modules/learning/presentation/widgets/letter_tile.dart)",
+      "Bash(/c/Users/Mina.Raof/AppData/Local/Android/Sdk/platform-tools/adb.exe devices *)",
+      "Bash(/c/Users/Mina.Raof/AppData/Local/Android/Sdk/platform-tools/adb.exe shell *)"
+    ]
+  }
+}

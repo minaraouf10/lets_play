@@ -1,12 +1,12 @@
 import '../../../../core/utils/app_imports.dart';
 import '../../../../core/widgets/app_loading.dart';
-
 import '../cubit/letter_game_cubit.dart';
-import '../widgets/block_grid.dart';
-import '../widgets/brick_palette.dart';
+import '../widgets/game_bottom_bar.dart';
 import '../widgets/game_result_overlay.dart';
+import '../widgets/game_stage_bricks.dart';
+import '../widgets/game_top_bar.dart';
+import '../widgets/puzzle_canvas.dart';
 
-/// "Build the letter" gameplay screen (Level 1 core mechanic).
 class LetterGamePage extends StatelessWidget {
   const LetterGamePage({super.key, required this.lessonId});
 
@@ -27,14 +27,7 @@ class _LetterGameView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.levelLetters,
-        title: const Text('Build the letter'),
-        leading: IconButton(
-          icon: const Icon(Icons.close),
-          onPressed: () => context.pop(),
-        ),
-      ),
+      backgroundColor: AppColors.gameCanvas,
       body: BlocBuilder<LetterGameCubit, LetterGameState>(
         builder: (context, state) {
           switch (state.status) {
@@ -44,44 +37,29 @@ class _LetterGameView extends StatelessWidget {
               return Center(child: Text(state.errorMessage ?? 'Error'));
             case GameStatus.playing:
             case GameStatus.completed:
+            case GameStatus.failed:
               final puzzle = state.puzzle!;
               final cubit = context.read<LetterGameCubit>();
               return Stack(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(AppDimensions.spaceLg),
+                  SafeArea(
                     child: Column(
                       children: [
-                        Text(
-                          'Build:  ${puzzle.glyph}',
-                          style: AppTextStyles.headingLarge,
+                        GameTopBar(
+                          hearts: state.hearts,
+                          progress: state.progress,
+                          onClose: () => context.pop(),
                         ),
-                        Text(
-                          puzzle.transliteration,
-                          style: AppTextStyles.bodyMedium,
-                        ),
+                        const SizedBox(height: AppDimensions.spaceSm),
+                        const GameStageBricks(),
                         const SizedBox(height: AppDimensions.spaceMd),
-                        LinearProgressIndicator(
-                          value: state.progress,
-                          color: AppColors.levelLetters,
-                          backgroundColor: AppColors.surface,
-                        ),
-                        const SizedBox(height: AppDimensions.spaceLg),
                         Expanded(
-                          child: Center(
-                            child: BlockGrid(
-                              puzzle: puzzle,
-                              filled: state.filled,
-                              brickColor:
-                                  kBrickColors[state.selectedColor],
-                              onTapCell: cubit.tapCell,
-                            ),
-                          ),
+                          child: PuzzleCanvas(puzzle: puzzle, state: state),
                         ),
-                        const SizedBox(height: AppDimensions.spaceLg),
-                        BrickPalette(
-                          selectedIndex: state.selectedColor,
-                          onSelected: cubit.selectColor,
+                        GameBottomBar(
+                          secondsLeft: state.secondsLeft,
+                          energy: state.energy,
+                          onReset: cubit.reset,
                         ),
                       ],
                     ),
@@ -98,6 +76,34 @@ class _LetterGameView extends StatelessWidget {
                           'lessonId': puzzle.lessonId,
                           'userName': 'Malak',
                         },
+                      ),
+                    ),
+                  if (state.status == GameStatus.failed)
+                    ColoredBox(
+                      color: Colors.black54,
+                      child: Center(
+                        child: Container(
+                          margin: const EdgeInsets.all(AppDimensions.spaceLg),
+                          padding: const EdgeInsets.all(AppDimensions.spaceLg),
+                          decoration: BoxDecoration(
+                            color: AppColors.background,
+                            borderRadius:
+                                BorderRadius.circular(AppDimensions.radiusLg),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text("Time's up!",
+                                  style: AppTextStyles.headingMedium),
+                              const SizedBox(height: AppDimensions.spaceMd),
+                              AppButton(
+                                label: 'Try again',
+                                color: AppColors.primary,
+                                onPressed: cubit.reset,
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                 ],

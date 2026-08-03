@@ -52,4 +52,13 @@ class AppColors {
 
   // Neo-brutalist accents (level headers, letter tiles).
   static const Color ink = Color(0xFF000000);
+
+  // "Form the letter" game.
+  static const Color brickOrange = Color(0xFFF5871F);
+  static const Color brickRed = Color(0xFFE8305A);
+  static const Color brickGreen = Color(0xFF22C55E);
+  static const Color brickGrey = Color(0xFFE9E9EB);
+  static const Color gameCanvas = Color(0xFFFFFFFF);
+  static const Color gameDot = Color(0xFFE4E4E7);
+  static const Color slotOutline = Color(0xFFD4D4D8);
 }

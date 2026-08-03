@@ -70,4 +70,26 @@ class AppDimensions {
   // Splash.
   static const double splashLogoWidth = 103;
   static const double splashCanvasWidth = 375;
+
+  // "Form the letter" game.
+  static const double gameCellSize = 40;
+  static const double gameCellGap = 2;
+  static const double gameSnapTolerance = 34;
+  static const double gameStudSize = 9;
+  static const double gameStudInset = 5;
+  static const double gameDotSpacing = 16;
+  static const double gameDotRadius = 1;
+  static const double gameProgressHeight = 14;
+  static const double gameStageBrickWidth = 56;
+  static const double gameStageBrickHeight = 28;
+  static const double gameResetButtonSize = 48;
+  static const int gameEnergyPerBrick = 50;
+  static const int gameStartSeconds = 30;
+
+  // Letter quiz screens.
+  static const double quizSpeakerSize = 72;
+  static const double quizSnailSize = 52;
+  static const double quizOptionHeight = 170;
+  static const double quizGlyphSize = 56;
+  static const double quizStatementGlyphSize = 88;
 }

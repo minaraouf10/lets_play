@@ -61,6 +61,9 @@ dependencies:
   go_router: ^14.2.0
   flutter_svg: ^2.0.10
 
+  # Letter pronunciation (quiz screens)
+  flutter_tts: ^4.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -75,19 +78,14 @@ dev_dependencies:
   injectable_generator: ^2.6.1
   flutter_native_splash: ^2.4.1
 
-# Native (pre-Flutter-engine) splash screen. This can only show ONE static
-# raster image — it cannot animate a GIF. It shows frame 0 of splash.gif
-# (extracted to PNG, see assets/images/splash/native_splash_gif_frame1.png)
-# so the handoff to SplashPage (which plays the full animated splash.gif,
-# then the logo) is seamless.
-# Regenerate after changing the GIF/PNG or colors with:
+# Native (pre-Flutter-engine) splash screen: a plain brand-yellow background,
+# no image. The animated splash.gif plays afterwards in SplashPage.
+# Regenerate after changing the color with:
 #   dart run flutter_native_splash:create
 flutter_native_splash:
   color: "#FEDD05"
-  image: assets/images/splash/native_splash_gif_frame1.png
   android_12:
     color: "#FEDD05"
-    image: assets/images/splash/native_splash_gif_frame1.png
   web: false
 
 # For information on the generic Dart part of this file, see the
@@ -105,6 +103,7 @@ flutter:
     - assets/images/intrto_icons/
     - assets/images/layout_icons/
     - assets/images/home/
+    - assets/images/icons/
 
   # example:
   # fonts:

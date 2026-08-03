@@ -9,19 +9,16 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:flutter_tts/flutter_tts.dart' as _i50;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart'
     as _i161;
 
-import '../../modules/authentication/data/datasources/auth_remote_datasource.dart'
-    as _i648;
 import '../../modules/authentication/data/datasources/mock_auth_remote_datasource.dart'
     as _i643;
 import '../../modules/authentication/data/repositories/auth_repository_impl.dart'
     as _i452;
-import '../../modules/authentication/domain/repositories/auth_repository.dart'
-    as _i457;
 import '../../modules/authentication/domain/usecases/login_usecase.dart'
     as _i875;
 import '../../modules/authentication/domain/usecases/logout_usecase.dart'
@@ -39,6 +36,11 @@ import '../../modules/games/domain/usecases/get_letter_puzzle_usecase.dart'
 import '../../modules/games/domain/usecases/save_game_result_usecase.dart'
     as _i714;
 import '../../modules/games/presentation/cubit/letter_game_cubit.dart' as _i464;
+import '../../modules/games/presentation/cubit/letter_quiz_cubit.dart' as _i959;
+import '../../modules/games/presentation/cubit/letter_review_cubit.dart'
+    as _i659;
+import '../../modules/games/presentation/cubit/letter_trace_cubit.dart'
+    as _i175;
 import '../../modules/learning/data/datasources/learning_local_datasource.dart'
     as _i1022;
 import '../../modules/learning/data/repositories/learning_repository_impl.dart'
@@ -72,6 +74,8 @@ import '../../modules/splash/presentation/cubit/splash_cubit.dart' as _i510;
 import '../networking/dio_client.dart' as _i201;
 import '../networking/network_info.dart' as _i303;
 import '../routing/app_router.dart' as _i282;
+import '../services/letter_audio_service.dart' as _i82;
+import '../utils/app_imports.dart' as _i468;
 import 'register_module.dart' as _i291;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -84,15 +88,19 @@ extension GetItInjectableX on _i174.GetIt {
     final registerModule = _$RegisterModule();
     gh.factory<_i1030.LessonIntroCubit>(() => _i1030.LessonIntroCubit());
     gh.factory<_i510.SplashCubit>(() => _i510.SplashCubit());
-    gh.lazySingleton<_i161.InternetConnection>(
+    gh.lazySingleton<_i468.InternetConnection>(
       () => registerModule.internetConnection,
     );
+    gh.lazySingleton<_i468.FlutterTts>(() => registerModule.flutterTts);
     gh.lazySingleton<_i201.DioClient>(() => _i201.DioClient());
     gh.lazySingleton<_i282.AppRouter>(() => _i282.AppRouter());
     gh.lazySingleton<_i668.OnboardingRemoteDataSource>(
       () => _i842.MockOnboardingRemoteDataSourceImpl(),
     );
-    gh.lazySingleton<_i648.AuthRemoteDataSource>(
+    gh.lazySingleton<_i82.LetterAudioService>(
+      () => _i82.LetterAudioService(gh<_i50.FlutterTts>()),
+    );
+    gh.lazySingleton<_i468.AuthRemoteDataSource>(
       () => _i643.MockAuthRemoteDataSourceImpl(),
     );
     gh.lazySingleton<_i1020.GamesLocalDataSource>(
@@ -119,20 +127,20 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i1028.GamesRepository>(
       () => _i340.GamesRepositoryImpl(gh<_i1020.GamesLocalDataSource>()),
     );
+    gh.lazySingleton<_i468.AuthRepository>(
+      () => _i452.AuthRepositoryImpl(
+        gh<_i468.AuthRemoteDataSource>(),
+        gh<_i468.NetworkInfo>(),
+      ),
+    );
     gh.lazySingleton<_i727.GetLevelsUseCase>(
       () => _i727.GetLevelsUseCase(gh<_i917.LearningRepository>()),
     );
-    gh.lazySingleton<_i457.AuthRepository>(
-      () => _i452.AuthRepositoryImpl(
-        gh<_i648.AuthRemoteDataSource>(),
-        gh<_i303.NetworkInfo>(),
+    gh.factory<_i959.LetterQuizCubit>(
+      () => _i959.LetterQuizCubit(
+        gh<_i727.GetLevelsUseCase>(),
+        gh<_i468.LetterAudioService>(),
       ),
-    );
-    gh.lazySingleton<_i875.LoginUseCase>(
-      () => _i875.LoginUseCase(gh<_i457.AuthRepository>()),
-    );
-    gh.lazySingleton<_i333.LogoutUseCase>(
-      () => _i333.LogoutUseCase(gh<_i457.AuthRepository>()),
     );
     gh.lazySingleton<_i952.GetLetterPuzzleUseCase>(
       () => _i952.GetLetterPuzzleUseCase(gh<_i1028.GamesRepository>()),
@@ -151,12 +159,14 @@ extension GetItInjectableX on _i174.GetIt {
       () =>
           _i444.SaveOnboardingAnswersUseCase(gh<_i270.OnboardingRepository>()),
     );
+    gh.lazySingleton<_i875.LoginUseCase>(
+      () => _i875.LoginUseCase(gh<_i468.AuthRepository>()),
+    );
+    gh.lazySingleton<_i333.LogoutUseCase>(
+      () => _i333.LogoutUseCase(gh<_i468.AuthRepository>()),
+    );
     gh.factory<_i472.LevelsCubit>(
       () => _i472.LevelsCubit(gh<_i727.GetLevelsUseCase>()),
-    );
-    gh.factory<_i659.AuthCubit>(
-      () =>
-          _i659.AuthCubit(gh<_i875.LoginUseCase>(), gh<_i333.LogoutUseCase>()),
     );
     gh.factory<_i816.OnboardingCubit>(
       () => _i816.OnboardingCubit(
@@ -164,8 +174,21 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i444.SaveOnboardingAnswersUseCase>(),
       ),
     );
+    gh.factory<_i659.LetterReviewCubit>(
+      () => _i659.LetterReviewCubit(gh<_i952.GetLetterPuzzleUseCase>()),
+    );
+    gh.factory<_i659.AuthCubit>(
+      () =>
+          _i659.AuthCubit(gh<_i468.LoginUseCase>(), gh<_i468.LogoutUseCase>()),
+    );
     gh.factory<_i464.LetterGameCubit>(
       () => _i464.LetterGameCubit(
+        gh<_i952.GetLetterPuzzleUseCase>(),
+        gh<_i714.SaveGameResultUseCase>(),
+      ),
+    );
+    gh.factory<_i175.LetterTraceCubit>(
+      () => _i175.LetterTraceCubit(
         gh<_i952.GetLetterPuzzleUseCase>(),
         gh<_i714.SaveGameResultUseCase>(),
       ),

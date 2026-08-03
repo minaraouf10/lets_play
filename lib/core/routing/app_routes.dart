@@ -11,6 +11,9 @@ class AppRoutes {
   static const String profile = '/profile';
   static const String letterGame = '/game/letter';
   static const String greatJob = '/game/great-job';
+  static const String letterReview = '/game/letter-review';
+  static const String letterTrace = '/game/letter-trace';
+  static const String letterQuiz = '/game/letter-quiz';
   static const String lessonIntro = '/lesson/intro';
 
   static const String splashName = 'splash';
@@ -22,5 +25,8 @@ class AppRoutes {
   static const String profileName = 'profile';
   static const String letterGameName = 'letterGame';
   static const String greatJobName = 'greatJob';
+  static const String letterReviewName = 'letterReview';
+  static const String letterTraceName = 'letterTrace';
+  static const String letterQuizName = 'letterQuiz';
   static const String lessonIntroName = 'lessonIntro';
 }

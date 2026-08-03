@@ -1,6 +1,5 @@
 import '../../../../core/utils/app_imports.dart';
 
-import '../../domain/entities/level_entity.dart';
 
 /// Colored, neo-brutalist banner that heads each level section on the map:
 /// solid level color, black border, hard offset shadow (no blur).

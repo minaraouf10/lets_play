@@ -1,6 +1,8 @@
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/errors/exceptions.dart';
+import '../../domain/entities/block_position.dart';
+import '../../domain/entities/puzzle_brick.dart';
 import '../models/letter_puzzle_model.dart';
 
 /// Offline-first puzzle definitions. Each Level 1 letter is a 7x5 grid
@@ -20,18 +22,65 @@ class GamesLocalDataSourceImpl implements GamesLocalDataSource {
   }
 
   static final Map<String, LetterPuzzleModel> _puzzles = {
-    'l1_alef': LetterPuzzleModel.fromBitmap(
+    'l1_alef': LetterPuzzleModel.fromBricks(
       lessonId: 'l1_alef',
-      glyph: 'ا',
+      glyph: 'أ',
       transliteration: 'aa',
-      bitmap: const [
-        '..#..',
-        '..#..',
-        '..#..',
-        '..#..',
-        '..#..',
-        '..#..',
-        '..#..',
+      rows: 9,
+      cols: 4,
+      // Only two brick shapes are used project-wide: a 1x1 single stud and
+      // a 1x2 double stud (two studs fused into one physical piece).
+      //
+      // Shape (أ): a stepped red hamza hook sitting on an orange stem.
+      //   col:    0 1 2 3
+      //   row 0 |     H H
+      //   row 1 |   H H
+      //   row 2 |     S
+      //   ...     (stem continues down column 2)
+      //   row 8 |     S
+      bricks: const [
+        PuzzleBrick(
+          id: 'hamza_top',
+          cells: [BlockPosition(0, 0), BlockPosition(0, 1)],
+          colorIndex: 1,
+          targetOrigin: BlockPosition(0, 2),
+          spawnOrigin: BlockPosition(3, 0),
+        ),
+        PuzzleBrick(
+          id: 'hamza_step',
+          cells: [BlockPosition(0, 0), BlockPosition(0, 1)],
+          colorIndex: 1,
+          targetOrigin: BlockPosition(1, 1),
+          spawnOrigin: BlockPosition(6, 0),
+        ),
+        PuzzleBrick(
+          id: 'stem_a',
+          cells: [BlockPosition(0, 0), BlockPosition(1, 0)],
+          colorIndex: 0,
+          targetOrigin: BlockPosition(2, 2),
+          spawnOrigin: BlockPosition(1, 0),
+        ),
+        PuzzleBrick(
+          id: 'stem_b',
+          cells: [BlockPosition(0, 0), BlockPosition(1, 0)],
+          colorIndex: 0,
+          targetOrigin: BlockPosition(4, 2),
+          spawnOrigin: BlockPosition(4, 0),
+        ),
+        PuzzleBrick(
+          id: 'stem_c',
+          cells: [BlockPosition(0, 0), BlockPosition(1, 0)],
+          colorIndex: 0,
+          targetOrigin: BlockPosition(6, 2),
+          spawnOrigin: BlockPosition(7, 3),
+        ),
+        PuzzleBrick(
+          id: 'stem_foot',
+          cells: [BlockPosition(0, 0)],
+          colorIndex: 0,
+          targetOrigin: BlockPosition(8, 2),
+          spawnOrigin: BlockPosition(0, 0),
+        ),
       ],
     ),
     'l1_ba': LetterPuzzleModel.fromBitmap(

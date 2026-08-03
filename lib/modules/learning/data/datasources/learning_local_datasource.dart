@@ -31,7 +31,7 @@ class LearningLocalDataSourceImpl implements LearningLocalDataSource {
       lessons: [
         LessonModel(
             id: 'l1_alef',
-            glyph: 'ا',
+            glyph: 'أ',
             transliteration: 'aa',
             isUnlocked: true),
         LessonModel(

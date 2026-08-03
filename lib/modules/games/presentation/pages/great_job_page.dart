@@ -10,10 +10,16 @@ class GreatJobPage extends StatefulWidget {
     super.key,
     required this.lessonId,
     required this.userName,
+    this.nextRouteName,
   });
 
   final String lessonId;
   final String userName;
+
+  /// Where CONTINUE goes. Defaults to the letter review flow; the trace
+  /// screen passes the levels map so the lesson ends there instead of
+  /// looping back through the review.
+  final String? nextRouteName;
 
   @override
   State<GreatJobPage> createState() => _GreatJobPageState();
@@ -163,9 +169,17 @@ class _GreatJobPageState extends State<GreatJobPage>
                     height: AppDimensions.buttonHeight,
                     child: OutlinedButton(
                       onPressed: () {
-                        // Navigate to the fill-in-the-blanks / next quiz
-                        // Replace with the correct route when that screen exists.
-                        context.pop();
+                        final next =
+                            widget.nextRouteName ?? AppRoutes.letterReviewName;
+                        context.pushReplacementNamed(
+                          next,
+                          queryParameters: next == AppRoutes.levelsName
+                              ? const {}
+                              : {
+                                  'lessonId': widget.lessonId,
+                                  'letterName': 'Alef',
+                                },
+                        );
                       },
                       style: OutlinedButton.styleFrom(
                         backgroundColor: AppColors.background,

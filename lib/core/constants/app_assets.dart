@@ -3,7 +3,10 @@
 class AppAssets {
   const AppAssets._();
 
-  //static const String _icons = 'assets/images/icons';
+  // Quiz icons.
+  static const String _icons = 'assets/images/icons';
+  static const String speakerIcon = '$_icons/speaker_icon.svg';
+  static const String snailIcon = '$_icons/snail_icon.svg';
 
   // Bottom navigation (layout shell) — full-color SVGs.
   static const String _layoutIcons = 'assets/images/layout_icons';

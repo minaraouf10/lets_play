@@ -1,6 +1,5 @@
 import '../../../../core/utils/app_imports.dart';
 
-import '../../domain/entities/lesson_entity.dart';
 
 /// One cell in the letter/lesson grid.
 /// Unlocked: solid level color, black neo-brutalist border + hard shadow.

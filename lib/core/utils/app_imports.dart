@@ -28,9 +28,13 @@ export 'validators.dart';
 export 'package:hive_flutter/hive_flutter.dart';
 export '../../../../core/utils/app_imports.dart';
 export 'package:flutter_svg/flutter_svg.dart';
+export 'package:flutter_tts/flutter_tts.dart';
+export '../services/letter_audio_service.dart';
 export 'package:game_test/modules/learning/presentation/widgets/level_color_mapper.dart';
 export 'package:game_test/modules/learning/presentation/widgets/lesson_intro_info_box.dart';
 export 'package:game_test/modules/learning/domain/entities/level_type.dart';
+export 'package:game_test/modules/learning/domain/entities/lesson_entity.dart';
+export 'package:game_test/modules/learning/domain/entities/level_entity.dart';
 export 'package:injectable/injectable.dart';
 export 'package:game_test/core/dependency_injection/injection.config.dart';
 export 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
@@ -39,6 +43,9 @@ export '../../modules/authentication/presentation/pages/login_page.dart';
 export '../../modules/splash/presentation/pages/splash_page.dart';
 export '../../modules/games/presentation/pages/letter_game_page.dart';
 export '../../modules/games/presentation/pages/great_job_page.dart';
+export '../../modules/games/presentation/pages/letter_review_page.dart';
+export '../../modules/games/presentation/pages/letter_trace_page.dart';
+export '../../modules/games/presentation/pages/letter_quiz_page.dart';
 export '../../modules/learning/presentation/pages/lesson_intro_page.dart';
 export '../../modules/onboarding/presentation/pages/onboarding_page.dart';
 export '../../modules/layout/presentation/pages/achievements_page.dart';
@@ -65,4 +72,9 @@ export '../../../../core/networking/network_info.dart';
 export 'package:game_test/modules/authentication/data/datasources/auth_remote_datasource.dart';
 export 'package:game_test/modules/authentication/data/models/user_model.dart';
 
-
+// Games domain (puzzle brick entities)
+export 'package:game_test/modules/games/domain/entities/letter_puzzle.dart';
+export 'package:game_test/modules/games/domain/entities/puzzle_brick.dart';
+export 'package:game_test/modules/games/domain/entities/block_position.dart';
+export 'package:game_test/modules/games/domain/entities/game_result.dart';
+export 'package:game_test/modules/games/domain/entities/letter_form.dart';

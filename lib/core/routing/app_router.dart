@@ -53,6 +53,30 @@ class AppRouter {
           builder: (context, state) => GreatJobPage(
             lessonId: state.uri.queryParameters['lessonId'] ?? '',
             userName: state.uri.queryParameters['userName'] ?? 'Student',
+            nextRouteName: state.uri.queryParameters['nextRoute'],
+          ),
+        ),
+        GoRoute(
+          path: AppRoutes.letterReview,
+          name: AppRoutes.letterReviewName,
+          builder: (context, state) => LetterReviewPage(
+            lessonId: state.uri.queryParameters['lessonId'] ?? '',
+            letterName: state.uri.queryParameters['letterName'] ?? 'Alef',
+          ),
+        ),
+        GoRoute(
+          path: AppRoutes.letterTrace,
+          name: AppRoutes.letterTraceName,
+          builder: (context, state) => LetterTracePage(
+            lessonId: state.uri.queryParameters['lessonId'] ?? '',
+          ),
+        ),
+        GoRoute(
+          path: AppRoutes.letterQuiz,
+          name: AppRoutes.letterQuizName,
+          builder: (context, state) => LetterQuizPage(
+            lessonId: state.uri.queryParameters['lessonId'] ?? '',
+            letterName: state.uri.queryParameters['letterName'] ?? 'Alif',
           ),
         ),
       ],
