@@ -1,8 +1,5 @@
 import '../../../../core/utils/app_imports.dart';
 
-
-
-
 class LessonIntroPlayStep extends StatelessWidget {
   const LessonIntroPlayStep({
     super.key,
@@ -12,6 +9,18 @@ class LessonIntroPlayStep extends StatelessWidget {
 
   final LevelType levelType;
   final String lessonId;
+
+  bool get _isWordLesson => levelType == LevelType.words;
+
+  String get _playRouteName =>
+      _isWordLesson ? AppRoutes.wordLessonName : AppRoutes.letterGameName;
+
+  String get _cardTitle => _isWordLesson ? 'Listen and repeat' : 'Tap on the blocks';
+
+  String get _cardSubtitle => _isWordLesson ? 'To learn the word' : 'To form the letter';
+
+  String get _image =>
+      _isWordLesson ? AppAssets.fathersImage : AppAssets.tapOnTheBlocksImage;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +40,7 @@ class LessonIntroPlayStep extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: 150,
-                //padding: const EdgeInsets.all(AppDimensions.spaceMd),
+                height: AppDimensions.onboardingCardMinH,
                 decoration: BoxDecoration(
                   color: AppColors.background,
                   borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
@@ -41,50 +49,24 @@ class LessonIntroPlayStep extends StatelessWidget {
                     width: AppDimensions.neoBorderWidth,
                   ),
                 ),
-                child: const Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Tap on the blocks',
-                      style: AppTextStyles.cardTitle,
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      'To form the letter',
-                      style: AppTextStyles.bodyMedium,
-                      textAlign: TextAlign.center,
-                    ),
+                    Text(_cardTitle, style: AppTextStyles.cardTitle, textAlign: TextAlign.center),
+                    Text(_cardSubtitle, style: AppTextStyles.bodyMedium, textAlign: TextAlign.center),
                   ],
                 ),
               ),
               Expanded(
-                child: Image.asset(AppAssets.tapOnTheBlocksImage,fit: BoxFit.fitHeight,),
+                child: _isWordLesson
+                    ? SvgPicture.asset(_image, fit: BoxFit.contain)
+                    : Image.asset(_image, fit: BoxFit.fitHeight),
               ),
               const SizedBox(height: AppDimensions.spaceLg),
-              SizedBox(
-                width: double.infinity,
-                height: AppDimensions.buttonHeight,
-                child: OutlinedButton(
-                  onPressed: () => context.pushReplacementNamed(
-                    AppRoutes.letterGameName,
-                    queryParameters: {'lessonId': lessonId},
-                  ),
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: AppColors.background,
-                    side: const BorderSide(
-                      color: AppColors.ink,
-                      width: AppDimensions.neoBorderWidth,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(AppDimensions.radiusMd),
-                    ),
-                  ),
-                  child: Text(
-                    'LETS PLAY',
-                    style: AppTextStyles.button.copyWith(
-                      color: AppColors.textPrimary,
-                    ),
-                  ),
+              LessonIntroPlayButton(
+                onPressed: () => context.pushReplacementNamed(
+                  _playRouteName,
+                  queryParameters: {'lessonId': lessonId},
                 ),
               ),
             ],

@@ -1,7 +1,7 @@
 import '../../../../core/utils/app_imports.dart';
 import '../../../../core/widgets/app_loading.dart';
 import '../cubit/letter_quiz_cubit.dart';
-import '../widgets/game_progress_bar.dart';
+import '../widgets/game_top_bar.dart';
 import '../widgets/quiz_continue_button.dart';
 import '../widgets/quiz_listen_step.dart';
 import '../widgets/quiz_statement_step.dart';
@@ -38,7 +38,7 @@ class _LetterQuizView extends StatelessWidget {
       queryParameters: {
         'lessonId': lessonId,
         'userName': 'Malak',
-        'nextRoute': AppRoutes.levelsName,
+        'nextRoute': AppRoutes.wordLessonName,
       },
     );
   }
@@ -67,9 +67,11 @@ class _LetterQuizView extends StatelessWidget {
                   padding: const EdgeInsets.all(AppDimensions.spaceMd),
                   child: Column(
                     children: [
-                      _QuizTopBar(
+                      GameTopBar(
                         hearts: state.hearts,
                         progress: state.progress,
+                        heartsLeading: true,
+                        onClose: () => context.pop(),
                       ),
                       Expanded(
                         child: state.status == QuizStatus.choosing
@@ -109,34 +111,6 @@ class _LetterQuizView extends StatelessWidget {
           }
         },
       ),
-    );
-  }
-}
-
-class _QuizTopBar extends StatelessWidget {
-  const _QuizTopBar({required this.hearts, required this.progress});
-
-  final int hearts;
-  final double progress;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconButton(
-          icon: const Icon(Icons.close, color: AppColors.textSecondary),
-          onPressed: () => context.pop(),
-        ),
-        Icon(
-          Icons.favorite_rounded,
-          color: AppColors.heart,
-          size: AppDimensions.iconMd,
-        ),
-        const SizedBox(width: AppDimensions.spaceXs),
-        Text('$hearts', style: AppTextStyles.bodySmall),
-        const SizedBox(width: AppDimensions.spaceSm),
-        Expanded(child: GameProgressBar(progress: progress)),
-      ],
     );
   }
 }

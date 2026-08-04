@@ -43,6 +43,8 @@ class LetterGlyphStep extends StatelessWidget {
                         glyph,
                         style: AppTextStyles.headingLarge.copyWith(
                           color: AppColors.textOnColor,
+                          fontSize: 300,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),

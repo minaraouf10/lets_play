@@ -1,7 +1,6 @@
 import '../../../../core/utils/app_imports.dart';
 
-/// Step 1 of the lesson intro flow: level-color gradient background, the
-/// lesson illustration, the lesson/level info card, and a continue button.
+
 class LessonIntroLessonStep extends StatelessWidget {
   const LessonIntroLessonStep({
     super.key,

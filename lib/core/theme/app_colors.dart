@@ -53,6 +53,10 @@ class AppColors {
   // Neo-brutalist accents (level headers, letter tiles).
   static const Color ink = Color(0xFF000000);
 
+  // Word lesson screens.
+  static const Color wordBanner = levelLetters;
+  static const Color micRecording = Color(0xFFFFE0E0);
+
   // "Form the letter" game.
   static const Color brickOrange = Color(0xFFF5871F);
   static const Color brickRed = Color(0xFFE8305A);
@@ -61,4 +65,22 @@ class AppColors {
   static const Color gameCanvas = Color(0xFFFFFFFF);
   static const Color gameDot = Color(0xFFE4E4E7);
   static const Color slotOutline = Color(0xFFD4D4D8);
+
+  // Profile / Leaderboard / Achievements.
+  static const Color profileGreen = success;
+  static const Color statEnergy = levelNumbers;
+  static const Color statHearts = levelTashkeel;
+  static const Color statPoints = levelSentences;
+  static const Color podiumFirst = levelLetters;
+  static const Color podiumSecond = levelNumbers;
+  static const Color podiumThird = levelTashkeel;
+  static const Color rankBadgeDefault = Color(0xFF9CA3AF);
+  static const Color highlightCard = Color(0xFFFFFFFF);
+  static const Color badgePill = success;
+  static const Color rewardsBanner = levelSentences;
+  static const Color rewardLockScrim = Color(0x66000000);
+  static const Color danger = error;
+  static const Color settingsCheck = success;
+  static const Color segmentedTrack = Color(0xFFF4F4F5);
+  static const Color overlayScrim = Color(0x8A000000);
 }

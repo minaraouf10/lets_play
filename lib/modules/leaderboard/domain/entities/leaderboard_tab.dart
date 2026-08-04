@@ -1,0 +1,4 @@
+enum LeaderboardTab {
+  leadership,
+  tournaments,
+}

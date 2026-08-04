@@ -15,6 +15,16 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart'
     as _i161;
 
+import '../../modules/achievements/data/datasources/achievements_local_datasource.dart'
+    as _i288;
+import '../../modules/achievements/data/repositories/achievements_repository_impl.dart'
+    as _i300;
+import '../../modules/achievements/domain/repositories/achievements_repository.dart'
+    as _i997;
+import '../../modules/achievements/domain/usecases/get_achievements_usecase.dart'
+    as _i846;
+import '../../modules/achievements/presentation/cubit/achievements_cubit.dart'
+    as _i600;
 import '../../modules/authentication/data/datasources/mock_auth_remote_datasource.dart'
     as _i643;
 import '../../modules/authentication/data/repositories/auth_repository_impl.dart'
@@ -41,6 +51,21 @@ import '../../modules/games/presentation/cubit/letter_review_cubit.dart'
     as _i659;
 import '../../modules/games/presentation/cubit/letter_trace_cubit.dart'
     as _i175;
+import '../../modules/games/presentation/cubit/word_lesson_cubit.dart' as _i642;
+import '../../modules/leaderboard/data/datasources/leaderboard_local_datasource.dart'
+    as _i74;
+import '../../modules/leaderboard/data/repositories/leaderboard_repository_impl.dart'
+    as _i721;
+import '../../modules/leaderboard/domain/repositories/leaderboard_repository.dart'
+    as _i232;
+import '../../modules/leaderboard/domain/usecases/get_followers_usecase.dart'
+    as _i463;
+import '../../modules/leaderboard/domain/usecases/get_leaderboard_usecase.dart'
+    as _i60;
+import '../../modules/leaderboard/presentation/cubit/followers_cubit.dart'
+    as _i229;
+import '../../modules/leaderboard/presentation/cubit/leaderboard_cubit.dart'
+    as _i409;
 import '../../modules/learning/data/datasources/learning_local_datasource.dart'
     as _i1022;
 import '../../modules/learning/data/repositories/learning_repository_impl.dart'
@@ -70,6 +95,17 @@ import '../../modules/onboarding/domain/usecases/save_onboarding_answers_usecase
     as _i444;
 import '../../modules/onboarding/presentation/cubit/onboarding_cubit.dart'
     as _i816;
+import '../../modules/profile/data/datasources/profile_local_datasource.dart'
+    as _i70;
+import '../../modules/profile/data/repositories/profile_repository_impl.dart'
+    as _i529;
+import '../../modules/profile/domain/repositories/profile_repository.dart'
+    as _i496;
+import '../../modules/profile/presentation/cubit/feedback_cubit.dart' as _i363;
+import '../../modules/profile/presentation/cubit/help_center_cubit.dart'
+    as _i329;
+import '../../modules/profile/presentation/cubit/profile_cubit.dart' as _i514;
+import '../../modules/profile/presentation/cubit/settings_cubit.dart' as _i366;
 import '../../modules/splash/presentation/cubit/splash_cubit.dart' as _i510;
 import '../networking/dio_client.dart' as _i201;
 import '../networking/network_info.dart' as _i303;
@@ -97,8 +133,16 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i668.OnboardingRemoteDataSource>(
       () => _i842.MockOnboardingRemoteDataSourceImpl(),
     );
+    gh.lazySingleton<_i288.AchievementsLocalDataSource>(
+      () => _i288.AchievementsLocalDataSourceImpl(),
+    );
     gh.lazySingleton<_i82.LetterAudioService>(
       () => _i82.LetterAudioService(gh<_i50.FlutterTts>()),
+    );
+    gh.lazySingleton<_i997.AchievementsRepository>(
+      () => _i300.AchievementsRepositoryImpl(
+        gh<_i288.AchievementsLocalDataSource>(),
+      ),
     );
     gh.lazySingleton<_i468.AuthRemoteDataSource>(
       () => _i643.MockAuthRemoteDataSourceImpl(),
@@ -115,6 +159,18 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i1022.LearningLocalDataSource>(
       () => _i1022.LearningLocalDataSourceImpl(),
     );
+    gh.lazySingleton<_i70.ProfileLocalDataSource>(
+      () => _i70.ProfileLocalDataSourceImpl(),
+    );
+    gh.lazySingleton<_i74.LeaderboardLocalDataSource>(
+      () => _i74.LeaderboardLocalDataSourceImpl(),
+    );
+    gh.factory<_i642.WordLessonCubit>(
+      () => _i642.WordLessonCubit(gh<_i468.LetterAudioService>()),
+    );
+    gh.factory<_i600.AchievementsCubit>(
+      () => _i600.AchievementsCubit(gh<_i846.GetAchievementsUseCase>()),
+    );
     gh.lazySingleton<_i917.LearningRepository>(
       () => _i418.LearningRepositoryImpl(gh<_i1022.LearningLocalDataSource>()),
     );
@@ -124,8 +180,28 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i668.OnboardingRemoteDataSource>(),
       ),
     );
+    gh.lazySingleton<_i496.ProfileRepository>(
+      () => _i529.ProfileRepositoryImpl(gh<_i70.ProfileLocalDataSource>()),
+    );
+    gh.factory<_i363.FeedbackCubit>(
+      () => _i363.FeedbackCubit(gh<_i496.ProfileRepository>()),
+    );
+    gh.factory<_i329.HelpCenterCubit>(
+      () => _i329.HelpCenterCubit(gh<_i496.ProfileRepository>()),
+    );
+    gh.factory<_i514.ProfileCubit>(
+      () => _i514.ProfileCubit(gh<_i496.ProfileRepository>()),
+    );
+    gh.factory<_i366.SettingsCubit>(
+      () => _i366.SettingsCubit(gh<_i496.ProfileRepository>()),
+    );
     gh.lazySingleton<_i1028.GamesRepository>(
       () => _i340.GamesRepositoryImpl(gh<_i1020.GamesLocalDataSource>()),
+    );
+    gh.lazySingleton<_i232.LeaderboardRepository>(
+      () => _i721.LeaderboardRepositoryImpl(
+        gh<_i74.LeaderboardLocalDataSource>(),
+      ),
     );
     gh.lazySingleton<_i468.AuthRepository>(
       () => _i452.AuthRepositoryImpl(
@@ -147,6 +223,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i714.SaveGameResultUseCase>(
       () => _i714.SaveGameResultUseCase(gh<_i1028.GamesRepository>()),
+    );
+    gh.lazySingleton<_i463.GetFollowersUseCase>(
+      () => _i463.GetFollowersUseCase(gh<_i232.LeaderboardRepository>()),
+    );
+    gh.lazySingleton<_i60.GetLeaderboardUseCase>(
+      () => _i60.GetLeaderboardUseCase(gh<_i232.LeaderboardRepository>()),
     );
     gh.lazySingleton<_i982.GetOnboardingQuestionsUseCase>(
       () =>
@@ -181,6 +263,9 @@ extension GetItInjectableX on _i174.GetIt {
       () =>
           _i659.AuthCubit(gh<_i468.LoginUseCase>(), gh<_i468.LogoutUseCase>()),
     );
+    gh.factory<_i229.FollowersCubit>(
+      () => _i229.FollowersCubit(gh<_i463.GetFollowersUseCase>()),
+    );
     gh.factory<_i464.LetterGameCubit>(
       () => _i464.LetterGameCubit(
         gh<_i952.GetLetterPuzzleUseCase>(),
@@ -192,6 +277,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i952.GetLetterPuzzleUseCase>(),
         gh<_i714.SaveGameResultUseCase>(),
       ),
+    );
+    gh.factory<_i409.LeaderboardCubit>(
+      () => _i409.LeaderboardCubit(gh<_i60.GetLeaderboardUseCase>()),
     );
     return this;
   }

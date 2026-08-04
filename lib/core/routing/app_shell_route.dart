@@ -1,3 +1,6 @@
+import 'package:game_test/modules/layout/presentation/pages/followers_page.dart';
+import 'package:game_test/modules/layout/presentation/pages/leaderboard_page.dart';
+
 import '../utils/app_imports.dart';
 
 
@@ -31,6 +34,13 @@ class AppShellRoute {
             path: AppRoutes.leaderboard,
             name: AppRoutes.leaderboardName,
             builder: (context, state) => const LeaderboardPage(),
+            routes: [
+              GoRoute(
+                path: AppRoutes.leaderboardFollowers,
+                name: AppRoutes.leaderboardFollowersName,
+                builder: (context, state) => const FollowersPage(),
+              ),
+            ],
           ),
         ]),
         StatefulShellBranch(routes: [
@@ -38,6 +48,25 @@ class AppShellRoute {
             path: AppRoutes.profile,
             name: AppRoutes.profileName,
             builder: (context, state) => const ProfilePage(),
+            routes: [
+              GoRoute(
+                path: AppRoutes.profileSettings,
+                name: AppRoutes.profileSettingsName,
+                builder: (context, state) => const SettingsPage(),
+                routes: [
+                  GoRoute(
+                    path: AppRoutes.settingsFeedback,
+                    name: AppRoutes.settingsFeedbackName,
+                    builder: (context, state) => const FeedbackPage(),
+                  ),
+                  GoRoute(
+                    path: AppRoutes.settingsHelp,
+                    name: AppRoutes.settingsHelpName,
+                    builder: (context, state) => const HelpCenterPage(),
+                  ),
+                ],
+              ),
+            ],
           ),
         ]),
       ],

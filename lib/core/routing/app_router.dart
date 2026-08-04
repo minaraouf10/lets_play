@@ -79,6 +79,13 @@ class AppRouter {
             letterName: state.uri.queryParameters['letterName'] ?? 'Alif',
           ),
         ),
+        GoRoute(
+          path: AppRoutes.wordLesson,
+          name: AppRoutes.wordLessonName,
+          builder: (context, state) => WordLessonPage(
+            lessonId: state.uri.queryParameters['lessonId'] ?? '',
+          ),
+        ),
       ],
     );
   }

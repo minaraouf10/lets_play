@@ -7,6 +7,7 @@ class AppAssets {
   static const String _icons = 'assets/images/icons';
   static const String speakerIcon = '$_icons/speaker_icon.svg';
   static const String snailIcon = '$_icons/snail_icon.svg';
+  static const String microphoneIcon = '$_icons/microphone_icon.svg';
 
   // Bottom navigation (layout shell) — full-color SVGs.
   static const String _layoutIcons = 'assets/images/layout_icons';
@@ -32,6 +33,10 @@ class AppAssets {
   static const String greatJobCharacter =
       '$_homeIcons/great_job_image.png';
 
+  // Word lesson flow.
+  static const String fathersImage = '$_homeIcons/fathers_image.svg';
+  static const String lionImage = '$_homeIcons/lion_image.svg';
+
   // Onboarding / misc
   // static const String paper = '$_icons/paper.png';
   // static const String disc = '$_icons/disc.png';
@@ -53,4 +58,19 @@ class AppAssets {
   static const String reasonEducational = '$_introIcons/educational_icons.svg';
   static const String reasonCareer = '$_introIcons/career_icons.svg';
   static const String reasonOther = '$_introIcons/Other_icon.svg';
+
+  // Profile tab.
+  static const String _profile = 'assets/images/profile';
+  static const String profileAvatar = '$_profile/profile.png';
+  static const String profileUserAvatar = '$_profile/user1_icon.png';
+  static const String profileMistakes = '$_profile/mistakes_icon.svg';
+  static const String profileQuiz = '$_profile/quiz_icon.svg';
+  static const String profileFacebook = '$_profile/facebook_icon.svg';
+  static const String profileInstagram = '$_profile/instgram_icon.svg';
+  static const String profileInviteFriends = '$_profile/invite_friends_icon.svg';
+  static const String profileContacts = '$_profile/contacts_icon.svg';
+  static const String profileSendMessage = '$_profile/send_message_icon.svg';
+
+  // Achievements.
+  static const String achievementsCastle = '$_homeIcons/castle_illustration.svg';
 }

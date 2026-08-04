@@ -9,12 +9,14 @@ class LearningHud extends StatelessWidget {
     this.coins = 0,
     this.hearts = 0,
     this.energy = 0,
+    this.showCoins = true,
     this.onSettingsTap,
   });
 
   final int coins;
   final int hearts;
   final int energy;
+  final bool showCoins;
   final VoidCallback? onSettingsTap;
 
   @override
@@ -23,8 +25,10 @@ class LearningHud extends StatelessWidget {
       height: AppDimensions.hudHeight,
       child: Row(
         children: [
-          HudChip(asset: AppAssets.hudCoin, value: '$coins'),
-          const SizedBox(width: AppDimensions.spaceMd),
+          if (showCoins) ...[
+            HudChip(asset: AppAssets.hudCoin, value: '$coins'),
+            const SizedBox(width: AppDimensions.spaceMd),
+          ],
           HudChip(asset: AppAssets.hudHeart, value: '$hearts'),
           const SizedBox(width: AppDimensions.spaceMd),
           HudChip(asset: AppAssets.hudEnergy, value: '$energy'),

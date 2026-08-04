@@ -92,4 +92,65 @@ class AppDimensions {
   static const double quizOptionHeight = 170;
   static const double quizGlyphSize = 56;
   static const double quizStatementGlyphSize = 88;
+
+  // Word lesson screens.
+  static const double wordIllustrationHeight = 360;
+  static const double wordGlyphSize = 44;
+  static const double wordMicSize = 96;
+  static const double wordMicIconSize = 44;
+  static const double wordCardSpeakerSize = 36;
+  static const double wordAudioCardHeight = 120;
+  static const double wordImageCardHeight = 150;
+  static const double wordBannerHeight = 110;
+  static const double wordBannerTextSize = 40;
+  static const int wordLessonStepCount = 4;
+  static const int wordRecordingSeconds = 2;
+
+  // Profile.
+  static const double profileAvatarLg = 96;
+  static const double profileAvatarMd = 48;
+  static const double profileAvatarSm = 36;
+  static const double profileEditBadge = 28;
+  static const double followBoxHeight = 72;
+  static const double statTileHeight = 84;
+  static const double statTileIconSize = 24;
+  static const double profileLinkRowHeight = 56;
+  static const double profileGearSize = 28;
+
+  // Settings.
+  static const double settingsToggleRowHeight = 52;
+  static const double settingsSectionGap = 24;
+  static const double settingsPairSpacing = 12;
+
+  // Feedback.
+  static const double feedbackRowHeight = 44;
+  static const double feedbackBodyMinHeight = 240;
+
+  // Help center.
+  static const double helpTileMinHeight = 52;
+  static const double searchFieldHeight = 48;
+
+  // Leaderboard.
+  static const double podiumHeightFirst = 132;
+  static const double podiumHeightSecond = 100;
+  static const double podiumHeightThird = 80;
+  static const double podiumBlockWidth = 92;
+  static const double podiumAvatarSize = 56;
+  static const double podiumCrownSize = 28;
+  static const double segmentedHeight = 44;
+  static const double leaderboardRowHeight = 64;
+  static const double rankBadgeSize = 28;
+
+  // Follower popup.
+  static const double overlayCardWidth = 320;
+  static const double overlayCloseSize = 24;
+  static const double badgePillHeight = 30;
+
+  // Achievements.
+  static const double totalPointsFontSize = 44;
+  static const double castleHeight = 240;
+  static const double rewardsBannerHeight = 56;
+  static const double rewardCardHeight = 180;
+  static const double rewardProgressHeight = 8;
+  static const double rewardPadlockSize = 32;
 }

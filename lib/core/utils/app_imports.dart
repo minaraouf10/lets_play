@@ -32,6 +32,7 @@ export 'package:flutter_tts/flutter_tts.dart';
 export '../services/letter_audio_service.dart';
 export 'package:game_test/modules/learning/presentation/widgets/level_color_mapper.dart';
 export 'package:game_test/modules/learning/presentation/widgets/lesson_intro_info_box.dart';
+export 'package:game_test/modules/learning/presentation/widgets/lesson_intro_play_button.dart';
 export 'package:game_test/modules/learning/domain/entities/level_type.dart';
 export 'package:game_test/modules/learning/domain/entities/lesson_entity.dart';
 export 'package:game_test/modules/learning/domain/entities/level_entity.dart';
@@ -46,12 +47,17 @@ export '../../modules/games/presentation/pages/great_job_page.dart';
 export '../../modules/games/presentation/pages/letter_review_page.dart';
 export '../../modules/games/presentation/pages/letter_trace_page.dart';
 export '../../modules/games/presentation/pages/letter_quiz_page.dart';
+export '../../modules/games/presentation/pages/word_lesson_page.dart';
 export '../../modules/learning/presentation/pages/lesson_intro_page.dart';
 export '../../modules/onboarding/presentation/pages/onboarding_page.dart';
-export '../../modules/layout/presentation/pages/achievements_page.dart';
+export '../../modules/achievements/presentation/pages/achievements_page.dart';
 export '../../modules/layout/presentation/pages/layout_page.dart';
-export '../../modules/layout/presentation/pages/leaderboard_page.dart';
-export '../../modules/layout/presentation/pages/profile_page.dart';
+// export '../../modules/leaderboard/presentation/pages/leaderboard_page.dart';
+// export '../../modules/leaderboard/presentation/pages/followers_page.dart';
+export '../../modules/profile/presentation/pages/profile_page.dart';
+export '../../modules/profile/presentation/pages/settings_page.dart';
+export '../../modules/profile/presentation/pages/feedback_page.dart';
+export '../../modules/profile/presentation/pages/help_center_page.dart';
 export '../../modules/learning/presentation/pages/levels_map_page.dart';
 export '../errors/failures.dart';
 export 'package:game_test/modules/authentication/presentation/cubit/auth_cubit.dart';
@@ -62,6 +68,9 @@ export 'package:game_test/modules/authentication/presentation/widgets/login_soci
 export 'package:game_test/modules/authentication/presentation/widgets/remember_me_row.dart';
 export '../../../../core/widgets/app_button.dart';
 export '../../../../core/widgets/app_text_field.dart';
+export '../../../../core/widgets/coming_soon_snackbar.dart';
+export '../../../../core/widgets/neo_container.dart';
+export '../../../../core/widgets/app_search_field.dart';
 export 'package:game_test/modules/authentication/domain/usecases/login_usecase.dart';
 export 'package:game_test/modules/authentication/domain/usecases/logout_usecase.dart';
 export 'package:game_test/modules/authentication/domain/entities/user_entity.dart';
@@ -78,3 +87,17 @@ export 'package:game_test/modules/games/domain/entities/puzzle_brick.dart';
 export 'package:game_test/modules/games/domain/entities/block_position.dart';
 export 'package:game_test/modules/games/domain/entities/game_result.dart';
 export 'package:game_test/modules/games/domain/entities/letter_form.dart';
+
+// Profile cubits & states
+export 'package:game_test/modules/profile/presentation/cubit/profile_cubit.dart';
+export 'package:game_test/modules/profile/presentation/cubit/settings_cubit.dart';
+export 'package:game_test/modules/profile/presentation/cubit/feedback_cubit.dart';
+export 'package:game_test/modules/profile/presentation/cubit/help_center_cubit.dart';
+
+// Profile domain entities
+export 'package:game_test/modules/profile/domain/entities/user_profile.dart';
+export 'package:game_test/modules/profile/domain/entities/user_stat.dart';
+export 'package:game_test/modules/profile/domain/entities/app_settings.dart';
+export 'package:game_test/modules/profile/domain/entities/feedback_draft.dart';
+export 'package:game_test/modules/profile/domain/entities/help_topic.dart';
+export 'package:game_test/modules/profile/domain/entities/profile_link.dart';
