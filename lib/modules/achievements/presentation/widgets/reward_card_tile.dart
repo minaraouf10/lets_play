@@ -3,7 +3,7 @@ import '../../../achievements/domain/entities/reward_card.dart';
 import 'reward_progress_bar.dart';
 
 class RewardCardTile extends StatelessWidget {
-  const RewardCardTile(this.reward);
+  const RewardCardTile(this.reward, {super.key});
 
   final RewardCard reward;
 

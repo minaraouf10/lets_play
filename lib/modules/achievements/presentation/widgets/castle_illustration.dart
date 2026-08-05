@@ -1,7 +1,7 @@
 import '../../../../core/utils/app_imports.dart';
 
 class CastleIllustration extends StatelessWidget {
-  const CastleIllustration();
+  const CastleIllustration({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +13,8 @@ class CastleIllustration extends StatelessWidget {
         errorBuilder: (context, error, stackTrace) {
           return NeoContainer(
             color: AppColors.surface,
-            child: const Center(
-              child: Text(
-                'Castle',
-                style: AppTextStyles.bodyMedium,
-              ),
+            child: Center(
+              child:SvgPicture.asset(AppAssets.pointsIcon)
             ),
           );
         },

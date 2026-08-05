@@ -3,7 +3,7 @@ import '../../../achievements/domain/entities/reward_card.dart';
 import 'reward_card_tile.dart';
 
 class RewardsRow extends StatelessWidget {
-  const RewardsRow(this.rewards);
+  const RewardsRow(this.rewards, {super.key});
 
   final List<RewardCard> rewards;
 

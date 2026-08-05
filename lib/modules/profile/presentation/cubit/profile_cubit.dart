@@ -1,5 +1,4 @@
-import '../../domain/entities/profile_link.dart';
-import '../../domain/entities/user_profile.dart';
+
 import '../../domain/repositories/profile_repository.dart';
 import '../../../../core/utils/app_imports.dart';
 
@@ -14,17 +13,21 @@ class ProfileCubit extends Cubit<ProfileState> {
   Future<void> loadProfile() async {
     emit(const ProfileState(status: ProfileStatus.loading));
     final result = await _repository.getUserProfile();
-    result.fold(
-      (failure) => emit(ProfileState(
+    await result.fold(
+      (failure) async => emit(ProfileState(
         status: ProfileStatus.error,
         errorMessage: failure.message,
       )),
-      (profile) => emit(ProfileState(
-        status: ProfileStatus.loaded,
-        profile: profile,
-        reviewLinks: [],
-        friendLinks: [],
-      )),
+      (profile) async {
+        final reviewResult = await _repository.getReviewLinks();
+        final friendResult = await _repository.getFriendLinks();
+        emit(ProfileState(
+          status: ProfileStatus.loaded,
+          profile: profile,
+          reviewLinks: reviewResult.getOrElse(() => const []),
+          friendLinks: friendResult.getOrElse(() => const []),
+        ));
+      },
     );
   }
 }

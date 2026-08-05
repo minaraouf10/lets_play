@@ -70,7 +70,11 @@ class AppAssets {
   static const String profileInviteFriends = '$_profile/invite_friends_icon.svg';
   static const String profileContacts = '$_profile/contacts_icon.svg';
   static const String profileSendMessage = '$_profile/send_message_icon.svg';
+  static const String pointsIcon = '$_profile/points_icon.svg';
 
   // Achievements.
   static const String achievementsCastle = '$_homeIcons/castle_illustration.svg';
+
+  // Leaderboard.
+  static const String podiumRankImage = 'assets/images/leaderboard/rank_image.png';
 }

@@ -1,6 +1,3 @@
-import 'package:game_test/modules/layout/presentation/pages/followers_page.dart';
-import 'package:game_test/modules/layout/presentation/pages/leaderboard_page.dart';
-
 import '../utils/app_imports.dart';
 
 

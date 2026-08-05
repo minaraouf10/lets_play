@@ -93,6 +93,11 @@ class AppDimensions {
   static const double quizGlyphSize = 56;
   static const double quizStatementGlyphSize = 88;
 
+  // Tashkeel lesson screens.
+  static const double tashkeelGlyphHeight = 280;
+  static const double tashkeelPieceSize = 64;
+  static const double tashkeelShapeCardSize = 120;
+
   // Word lesson screens.
   static const double wordIllustrationHeight = 360;
   static const double wordGlyphSize = 44;
@@ -112,6 +117,7 @@ class AppDimensions {
   static const double profileAvatarSm = 36;
   static const double profileEditBadge = 28;
   static const double followBoxHeight = 72;
+  static const double followBoxWidth = 96;
   static const double statTileHeight = 84;
   static const double statTileIconSize = 24;
   static const double profileLinkRowHeight = 56;

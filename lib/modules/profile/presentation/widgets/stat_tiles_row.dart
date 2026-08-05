@@ -1,5 +1,4 @@
 import '../../../../core/utils/app_imports.dart';
-import '../../domain/entities/user_stat.dart';
 import 'stat_tile.dart';
 
 class StatTilesRow extends StatelessWidget {

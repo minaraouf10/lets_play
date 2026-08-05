@@ -1,4 +1,3 @@
-import '../../domain/entities/app_settings.dart';
 import '../../domain/repositories/profile_repository.dart';
 import '../../../../core/utils/app_imports.dart';
 

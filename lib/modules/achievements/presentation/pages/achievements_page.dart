@@ -1,5 +1,5 @@
 import 'package:game_test/modules/achievements/presentation/cubit/achievements_cubit.dart';
-import 'package:game_test/modules/learning/presentation/widgets/learning_hud.dart';
+import 'package:game_test/modules/home/learning/presentation/widgets/learning_hud.dart';
 
 import '../../../../core/utils/app_imports.dart';
 import '../widgets/total_points_block.dart';

@@ -14,18 +14,21 @@ class FollowCountsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(
-          child: FollowCountBox(
-            count: followersCount,
-            label: 'Followers',
-          ),
-        ),
-        const SizedBox(width: AppDimensions.spaceMd),
-        Expanded(
+        SizedBox(
+          width: AppDimensions.followBoxWidth,
           child: FollowCountBox(
             count: followingCount,
             label: 'Following',
+          ),
+        ),
+        const SizedBox(width: AppDimensions.spaceMd),
+        SizedBox(
+          width: AppDimensions.followBoxWidth,
+          child: FollowCountBox(
+            count: followersCount,
+            label: 'Followers',
           ),
         ),
       ],

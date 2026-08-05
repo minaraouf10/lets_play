@@ -1,5 +1,4 @@
 import '../../../../core/utils/app_imports.dart';
-import '../../domain/entities/profile_link.dart';
 import 'profile_link_row.dart';
 import 'section_heading.dart';
 

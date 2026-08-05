@@ -15,6 +15,7 @@ class AppRoutes {
   static const String letterTrace = '/game/letter-trace';
   static const String letterQuiz = '/game/letter-quiz';
   static const String wordLesson = '/game/word-lesson';
+  static const String tashkeelLesson = '/game/tashkeel-lesson';
   static const String lessonIntro = '/lesson/intro';
 
   // Sub-routes nested inside shell branches. Relative paths (no leading /).
@@ -36,6 +37,7 @@ class AppRoutes {
   static const String letterTraceName = 'letterTrace';
   static const String letterQuizName = 'letterQuiz';
   static const String wordLessonName = 'wordLesson';
+  static const String tashkeelLessonName = 'tashkeelLesson';
   static const String lessonIntroName = 'lessonIntro';
 
   static const String profileSettingsName = 'profileSettings';

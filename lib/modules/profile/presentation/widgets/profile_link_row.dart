@@ -36,15 +36,19 @@ class ProfileLinkRow extends StatelessWidget {
       onTap: () => _handleTap(context),
       child: Container(
         height: AppDimensions.profileLinkRowHeight,
+        margin: const EdgeInsets.only(bottom: AppDimensions.spaceSm),
         padding: const EdgeInsets.symmetric(horizontal: AppDimensions.spaceMd),
+        decoration: BoxDecoration(
+          color: AppColors.surface,
+          border: Border.all(color: AppColors.border),
+          borderRadius: BorderRadius.circular(AppDimensions.radiusMd),
+        ),
         child: Row(
           children: [
             SvgPicture.asset(
               iconAsset,
               width: AppDimensions.iconMd,
               height: AppDimensions.iconMd,
-              colorFilter:
-                  const ColorFilter.mode(AppColors.textPrimary, BlendMode.srcIn),
             ),
             const SizedBox(width: AppDimensions.spaceMd),
             Expanded(

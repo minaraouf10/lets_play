@@ -33,9 +33,7 @@ class AppRouter {
           name: AppRoutes.lessonIntroName,
           builder: (context, state) => LessonIntroPage(
             lessonId: state.uri.queryParameters['lessonId'] ?? '',
-            levelType: LevelType.values.byName(
-              state.uri.queryParameters['levelType'] ?? LevelType.letters.name,
-            ),
+            levelType: _levelTypeFrom(state.uri.queryParameters['levelType']),
             lessonNumber:
                 int.tryParse(state.uri.queryParameters['lessonNumber'] ?? '') ?? 1,
           ),
@@ -53,6 +51,7 @@ class AppRouter {
           builder: (context, state) => GreatJobPage(
             lessonId: state.uri.queryParameters['lessonId'] ?? '',
             userName: state.uri.queryParameters['userName'] ?? 'Student',
+            levelType: _levelTypeFrom(state.uri.queryParameters['levelType']),
             nextRouteName: state.uri.queryParameters['nextRoute'],
           ),
         ),
@@ -86,9 +85,26 @@ class AppRouter {
             lessonId: state.uri.queryParameters['lessonId'] ?? '',
           ),
         ),
+        GoRoute(
+          path: AppRoutes.tashkeelLesson,
+          name: AppRoutes.tashkeelLessonName,
+          builder: (context, state) => TashkeelLessonPage(
+            lessonId: state.uri.queryParameters['lessonId'] ?? '',
+          ),
+        ),
       ],
     );
   }
 
   late final GoRouter router;
+
+  /// Parses a `levelType` query parameter, falling back to [LevelType.letters]
+  /// when it is absent or not a known level name.
+  static LevelType _levelTypeFrom(String? name) {
+    if (name == null) return LevelType.letters;
+    for (final type in LevelType.values) {
+      if (type.name == name) return type;
+    }
+    return LevelType.letters;
+  }
 }

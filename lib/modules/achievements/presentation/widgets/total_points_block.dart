@@ -1,7 +1,7 @@
 import '../../../../core/utils/app_imports.dart';
 
 class TotalPointsBlock extends StatelessWidget {
-  const TotalPointsBlock(this.totalPoints);
+  const TotalPointsBlock(this.totalPoints, {super.key});
 
   final int totalPoints;
 

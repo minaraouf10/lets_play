@@ -6,6 +6,7 @@ import '../../../../core/errors/failures.dart';
 import '../../domain/entities/app_settings.dart';
 import '../../domain/entities/feedback_draft.dart';
 import '../../domain/entities/help_topic.dart';
+import '../../domain/entities/profile_link.dart';
 import '../../domain/entities/user_profile.dart';
 import '../../domain/repositories/profile_repository.dart';
 import '../datasources/profile_local_datasource.dart';
@@ -21,6 +22,30 @@ class ProfileRepositoryImpl implements ProfileRepository {
     try {
       final profile = await _local.getUserProfile();
       return Right(profile);
+    } on CacheException catch (e) {
+      return Left(CacheFailure(e.message));
+    } catch (_) {
+      return const Left(UnexpectedFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<ProfileLink>>> getReviewLinks() async {
+    try {
+      final links = await _local.getReviewLinks();
+      return Right(links);
+    } on CacheException catch (e) {
+      return Left(CacheFailure(e.message));
+    } catch (_) {
+      return const Left(UnexpectedFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<ProfileLink>>> getFriendLinks() async {
+    try {
+      final links = await _local.getFriendLinks();
+      return Right(links);
     } on CacheException catch (e) {
       return Left(CacheFailure(e.message));
     } catch (_) {

@@ -22,7 +22,7 @@ class ProfileSeedData {
   static const List<ProfileLinkModel> seedReviewLinks = [
     ProfileLinkModel(
       kind: ProfileLinkKind.mistakes,
-      label: 'My Mistakes',
+      label: 'Mistakes',
       iconAsset: 'assets/images/profile/mistakes_icon.svg',
       isImplemented: false,
     ),
@@ -37,13 +37,13 @@ class ProfileSeedData {
   static const List<ProfileLinkModel> seedFriendLinks = [
     ProfileLinkModel(
       kind: ProfileLinkKind.facebook,
-      label: 'Facebook',
+      label: 'Connect to Facebook',
       iconAsset: 'assets/images/profile/facebook_icon.svg',
       isImplemented: false,
     ),
     ProfileLinkModel(
       kind: ProfileLinkKind.instagram,
-      label: 'Instagram',
+      label: 'Connect to Instagram',
       iconAsset: 'assets/images/profile/instgram_icon.svg',
       isImplemented: false,
     ),
@@ -55,7 +55,7 @@ class ProfileSeedData {
     ),
     ProfileLinkModel(
       kind: ProfileLinkKind.contacts,
-      label: 'Contacts',
+      label: 'Connect to Contacts',
       iconAsset: 'assets/images/profile/contacts_icon.svg',
       isImplemented: false,
     ),

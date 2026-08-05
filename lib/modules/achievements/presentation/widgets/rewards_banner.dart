@@ -1,7 +1,7 @@
 import '../../../../core/utils/app_imports.dart';
 
 class RewardsBanner extends StatelessWidget {
-  const RewardsBanner(this.bannerText);
+  const RewardsBanner(this.bannerText, {super.key});
 
   final String bannerText;
 

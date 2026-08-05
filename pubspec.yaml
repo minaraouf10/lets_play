@@ -105,6 +105,7 @@ flutter:
     - assets/images/home/
     - assets/images/icons/
     - assets/images/profile/
+    - assets/images/leaderboard/
 
   # example:
   # fonts:
