@@ -12,6 +12,9 @@ const Map<String, String> kSpokenLetterNames = {
 
   // Level 2 (Tashkeel) — spoken as the mark's name, not the carrier letter.
   'l2_fatha': 'فَتْحَة',
+
+  // Level 3 (Numbers) — spoken as the number's word, not the bare digit.
+  'l3_one': 'وَاحِد',
 };
 
 /// The text to pronounce for [lessonId], falling back to [glyph] when the
@@ -27,6 +30,7 @@ const Map<String, String> kDisplayLetterNames = {
   'l1_tha': 'Thaa',
   'l1_jeem': 'Jeem',
   'l2_fatha': 'Fat-hah',
+  'l3_one': 'Wahed',
 };
 
 /// The title to show for [lessonId], falling back to 'Letter' when the lesson

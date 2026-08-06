@@ -22,12 +22,38 @@ class LetterQuizCubit extends Cubit<LetterQuizState> {
         errorMessage: failure.message,
       )),
       (levels) {
-        final lessons = levels.expand((l) => l.lessons).toList();
-        final target = lessons.firstWhere(
-          (l) => l.id == lessonId,
-          orElse: () => lessons.first,
-        );
-        final others = lessons.where((l) => l.id != target.id).toList();
+        // Widened to the entity type up front: the concrete lists are
+        // List<LevelModel>/List<LessonModel>, and firstWhere's orElse must
+        // return that same subtype rather than the entity it declares.
+        final lessons =
+            levels.expand<LessonEntity>((l) => l.lessons).toList();
+        if (lessons.isEmpty) {
+          emit(const LetterQuizState(
+            status: QuizStatus.error,
+            errorMessage: 'No lessons available',
+          ));
+          return;
+        }
+        final matches = lessons.where((l) => l.id == lessonId).toList();
+        final target = matches.isNotEmpty ? matches.first : lessons.first;
+
+        // Distractors come from the target's own level, so a number is never
+        // offered against a letter. Falls back to every other lesson when the
+        // level has only one. `levels` is a List<LevelModel> at runtime, so
+        // this avoids firstWhere — its orElse would have to return that same
+        // subtype, not the LevelEntity the static type promises.
+        final ownLevel = levels
+            .where((l) => l.lessons.any((lesson) => lesson.id == target.id))
+            .toList();
+        final sameLevel = ownLevel.isEmpty
+            ? const <LessonEntity>[]
+            : ownLevel.first.lessons
+                .where((l) => l.id != target.id)
+                .cast<LessonEntity>()
+                .toList();
+        final others = sameLevel.isNotEmpty
+            ? sameLevel
+            : lessons.where((l) => l.id != target.id).toList();
         if (others.isEmpty) {
           emit(const LetterQuizState(
             status: QuizStatus.error,

@@ -64,8 +64,10 @@ class LearningLocalDataSourceImpl implements LearningLocalDataSource {
       titleAr: 'المستوى الثالث (الأرقام)',
       description:
           'Learn all the numbers and their usage and unlock new worlds.',
+      isUnlocked: true,
       lessons: [
-        LessonModel(id: 'l3_one', glyph: '١', transliteration: '1'),
+        LessonModel(
+            id: 'l3_one', glyph: '١', transliteration: '1', isUnlocked: true),
         LessonModel(id: 'l3_two', glyph: '٢', transliteration: '2'),
       ],
     ),

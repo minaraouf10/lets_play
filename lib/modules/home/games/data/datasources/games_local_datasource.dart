@@ -177,5 +177,50 @@ class GamesLocalDataSourceImpl implements GamesLocalDataSource {
         ),
       ],
     ),
+
+    // ── Level 3 (Numbers) ─────────────────────────────────────────────────
+    // The Arabic-Indic one (١) is a plain vertical stroke sitting on the
+    // baseline — a single orange column built from four 1x2 bricks.
+    //   col:    0 1 2 3
+    //   row 0 |     S
+    //   ...     (stem continues down column 2)
+    //   row 7 |     S
+    'l3_one': LetterPuzzleModel.fromBricks(
+      lessonId: 'l3_one',
+      glyph: '١',
+      transliteration: '1',
+      rows: 8,
+      cols: 4,
+      bricks: const [
+        PuzzleBrick(
+          id: 'one_a',
+          cells: [BlockPosition(0, 0), BlockPosition(1, 0)],
+          colorIndex: 0,
+          targetOrigin: BlockPosition(0, 2),
+          spawnOrigin: BlockPosition(2, 0),
+        ),
+        PuzzleBrick(
+          id: 'one_b',
+          cells: [BlockPosition(0, 0), BlockPosition(1, 0)],
+          colorIndex: 0,
+          targetOrigin: BlockPosition(2, 2),
+          spawnOrigin: BlockPosition(0, 0),
+        ),
+        PuzzleBrick(
+          id: 'one_c',
+          cells: [BlockPosition(0, 0), BlockPosition(1, 0)],
+          colorIndex: 0,
+          targetOrigin: BlockPosition(4, 2),
+          spawnOrigin: BlockPosition(5, 3),
+        ),
+        PuzzleBrick(
+          id: 'one_d',
+          cells: [BlockPosition(0, 0), BlockPosition(1, 0)],
+          colorIndex: 0,
+          targetOrigin: BlockPosition(6, 2),
+          spawnOrigin: BlockPosition(6, 0),
+        ),
+      ],
+    ),
   };
 }

@@ -39,6 +39,20 @@ class AppRouter {
           ),
         ),
         GoRoute(
+          path: AppRoutes.traceIntro,
+          name: AppRoutes.traceIntroName,
+          builder: (context, state) {
+            final lessonId = state.uri.queryParameters['lessonId'] ?? '';
+            return Scaffold(
+              body: LessonIntroPlayStep(
+                levelType: levelTypeForLessonId(lessonId),
+                lessonId: lessonId,
+                traceMode: true,
+              ),
+            );
+          },
+        ),
+        GoRoute(
           path: AppRoutes.letterGame,
           name: AppRoutes.letterGameName,
           builder: (context, state) => LetterGamePage(
@@ -76,6 +90,13 @@ class AppRouter {
           builder: (context, state) => LetterQuizPage(
             lessonId: state.uri.queryParameters['lessonId'] ?? '',
             letterName: state.uri.queryParameters['letterName'] ?? 'Alif',
+          ),
+        ),
+        GoRoute(
+          path: AppRoutes.numberQuiz,
+          name: AppRoutes.numberQuizName,
+          builder: (context, state) => NumberQuizPage(
+            lessonId: state.uri.queryParameters['lessonId'] ?? '',
           ),
         ),
         GoRoute(

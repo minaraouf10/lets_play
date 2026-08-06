@@ -1,23 +1,47 @@
 import '../../../../../core/utils/app_imports.dart';
 
+/// "Get ready to play" card shown before a brick round starts.
+///
+/// Used twice in a lesson: before the first (tap-to-place) round, and — with
+/// [traceMode] set — before the trace round that follows the review.
 class LessonIntroPlayStep extends StatelessWidget {
   const LessonIntroPlayStep({
     super.key,
     required this.levelType,
     required this.lessonId,
+    this.traceMode = false,
   });
 
   final LevelType levelType;
   final String lessonId;
 
+  /// When true the card introduces the trace round instead of the first one.
+  final bool traceMode;
+
   bool get _isWordLesson => levelType == LevelType.words;
 
-  String get _playRouteName =>
-      _isWordLesson ? AppRoutes.wordLessonName : AppRoutes.letterGameName;
+  String get _playRouteName => traceMode
+      ? AppRoutes.letterTraceName
+      : _isWordLesson
+          ? AppRoutes.wordLessonName
+          : AppRoutes.letterGameName;
 
-  String get _cardTitle => _isWordLesson ? 'Listen and repeat' : 'Tap on the blocks';
+  String get _subject => switch (levelType) {
+        LevelType.words => 'word',
+        LevelType.numbers => 'number',
+        _ => 'letter',
+      };
 
-  String get _cardSubtitle => _isWordLesson ? 'To learn the word' : 'To form the letter';
+  String get _cardTitle {
+    if (traceMode) return 'Form the $_subject';
+    return _isWordLesson ? 'Listen and repeat' : 'Tap on the blocks';
+  }
+
+  /// What the bricks add up to: a word, a number (Level 3) or a letter.
+  String get _cardSubtitle {
+    if (traceMode) return 'Using the blocks';
+    return _isWordLesson ? 'To learn the word' : 'To form the $_subject';
+  }
 
   String get _image =>
       _isWordLesson ? AppAssets.fathersImage : AppAssets.tapOnTheBlocksImage;

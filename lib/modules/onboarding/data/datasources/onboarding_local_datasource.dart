@@ -94,6 +94,33 @@ class OnboardingLocalDataSourceImpl implements OnboardingLocalDataSource {
           trailingLabel: 'Customized only for you\nand your needs',
           assetPath: 'assets/images/intrto_icons/personalized_lessons.svg',
         ),
+        // What ships today. No icons of their own yet — PremiumFeatureCard
+        // lays the card out text-only when assetPath is null.
+        OnboardingOption(
+          id: 'games',
+          label: 'Games',
+          trailingLabel: 'Build letters and numbers\nout of bricks',
+        ),
+        OnboardingOption(
+          id: 'learning',
+          label: 'Learning',
+          trailingLabel: 'A guided map of lessons\nfrom letters to sentences',
+        ),
+        OnboardingOption(
+          id: 'level_1',
+          label: 'Level 1',
+          trailingLabel: 'Letters — form, trace and\npronounce each one',
+        ),
+        OnboardingOption(
+          id: 'level_2',
+          label: 'Level 2',
+          trailingLabel: 'Tashkeel — the marks that\nshape every word',
+        ),
+        OnboardingOption(
+          id: 'level_3',
+          label: 'Level 3',
+          trailingLabel: 'Numbers — form, write and\nsay them aloud',
+        ),
       ],
     ),
     // Step 4 – Benefits

@@ -1,6 +1,9 @@
 part of 'lesson_intro_cubit.dart';
 
-enum LessonIntroStep { lesson, play }
+/// Ordered steps of the intro flow. [level] only appears for levels that
+/// have an objectives card (see [kLevelObjectives]); the cubit skips it
+/// otherwise, so the flow starts on [lesson] exactly as it always has.
+enum LessonIntroStep { level, lesson, play }
 
 class LessonIntroState extends Equatable {
   const LessonIntroState({this.step = LessonIntroStep.lesson});

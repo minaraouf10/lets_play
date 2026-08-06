@@ -33,6 +33,10 @@ class AppAssets {
   static const String greatJobCharacter =
       '$_homeIcons/great_job_image.png';
 
+  // Level 3 (Numbers) lesson flow.
+  static const String _level3 = 'assets/images/level3';
+  static const String levelThreeIntroImage = '$_level3/image_level_3.svg';
+
   // Word lesson flow.
   static const String fathersImage = '$_homeIcons/fathers_image.svg';
   static const String lionImage = '$_homeIcons/lion_image.svg';

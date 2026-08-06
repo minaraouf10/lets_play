@@ -10,11 +10,15 @@ class LetterBricksStep extends StatelessWidget {
     required this.letterName,
     required this.puzzle,
     required this.onContinue,
+    this.arabicWord,
   });
 
   final String letterName;
   final LetterPuzzle puzzle;
   final VoidCallback onContinue;
+
+  /// Arabic spelling shown beside [letterName] on number lessons.
+  final String? arabicWord;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,7 @@ class LetterBricksStep extends StatelessWidget {
                   onPressed: () => context.pop(),
                 ),
               ),
-              LetterReviewCard(letterName: letterName),
+              LetterReviewCard(letterName: letterName, arabicWord: arabicWord),
               Expanded(child: AssembledLetterBricks.puzzle(puzzle)),
               const SizedBox(height: AppDimensions.spaceLg),
               LetterReviewContinueButton(onPressed: onContinue),

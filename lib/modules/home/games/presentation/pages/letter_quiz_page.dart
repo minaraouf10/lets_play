@@ -1,5 +1,6 @@
 import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
+import '../../data/datasources/number_data.dart';
 import '../cubit/letter_quiz_cubit.dart';
 import '../widgets/game_top_bar.dart';
 import '../widgets/quiz_continue_button.dart';
@@ -33,12 +34,17 @@ class _LetterQuizView extends StatelessWidget {
   final String letterName;
 
   void _finish(BuildContext context) {
+    // Numbers have no word lesson to hand off to, so they end on the
+    // celebration screen and return to the levels map.
+    final isNumber = isNumberLesson(lessonId);
     context.pushReplacementNamed(
       AppRoutes.greatJobName,
       queryParameters: {
         'lessonId': lessonId,
         'userName': 'Malak',
-        'nextRoute': AppRoutes.wordLessonName,
+        'levelType': levelTypeForLessonId(lessonId).name,
+        'nextRoute':
+            isNumber ? AppRoutes.levelsName : AppRoutes.wordLessonName,
       },
     );
   }

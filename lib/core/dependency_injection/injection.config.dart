@@ -53,6 +53,8 @@ import '../../modules/home/games/presentation/cubit/letter_review_cubit.dart'
     as _i711;
 import '../../modules/home/games/presentation/cubit/letter_trace_cubit.dart'
     as _i470;
+import '../../modules/home/games/presentation/cubit/number_quiz_cubit.dart'
+    as _i975;
 import '../../modules/home/games/presentation/cubit/tashkeel_lesson_cubit.dart'
     as _i801;
 import '../../modules/home/games/presentation/cubit/word_lesson_cubit.dart'
@@ -268,14 +270,24 @@ extension GetItInjectableX on _i174.GetIt {
       () =>
           _i444.SaveOnboardingAnswersUseCase(gh<_i270.OnboardingRepository>()),
     );
+    gh.factory<_i975.NumberQuizCubit>(
+      () => _i975.NumberQuizCubit(
+        gh<_i447.GetLetterPuzzleUseCase>(),
+        gh<_i778.SaveGameResultUseCase>(),
+        gh<_i468.LetterAudioService>(),
+      ),
+    );
+    gh.factory<_i711.LetterReviewCubit>(
+      () => _i711.LetterReviewCubit(
+        gh<_i447.GetLetterPuzzleUseCase>(),
+        gh<_i468.LetterAudioService>(),
+      ),
+    );
     gh.lazySingleton<_i875.LoginUseCase>(
       () => _i875.LoginUseCase(gh<_i468.AuthRepository>()),
     );
     gh.lazySingleton<_i333.LogoutUseCase>(
       () => _i333.LogoutUseCase(gh<_i468.AuthRepository>()),
-    );
-    gh.factory<_i711.LetterReviewCubit>(
-      () => _i711.LetterReviewCubit(gh<_i447.GetLetterPuzzleUseCase>()),
     );
     gh.factory<_i816.OnboardingCubit>(
       () => _i816.OnboardingCubit(

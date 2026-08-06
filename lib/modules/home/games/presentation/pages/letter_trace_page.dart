@@ -1,5 +1,6 @@
 import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
+import '../../data/datasources/number_data.dart';
 import '../cubit/letter_trace_cubit.dart';
 import '../widgets/game_bottom_bar.dart';
 import '../widgets/game_result_overlay.dart';
@@ -81,7 +82,12 @@ class _LetterTraceView extends StatelessWidget {
                         queryParameters: {
                           'lessonId': puzzle.lessonId,
                           'userName': 'Malak',
-                          'nextRoute': AppRoutes.letterQuizName,
+                          'levelType':
+                              levelTypeForLessonId(puzzle.lessonId).name,
+                          // Numbers get their own six-question quiz.
+                          'nextRoute': isNumberLesson(puzzle.lessonId)
+                              ? AppRoutes.numberQuizName
+                              : AppRoutes.letterQuizName,
                         },
                       ),
                     ),

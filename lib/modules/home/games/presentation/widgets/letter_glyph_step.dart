@@ -9,11 +9,15 @@ class LetterGlyphStep extends StatelessWidget {
     required this.letterName,
     required this.glyph,
     required this.onContinue,
+    this.arabicWord,
   });
 
   final String letterName;
   final String glyph;
   final VoidCallback onContinue;
+
+  /// Arabic spelling shown beside [letterName] on number lessons.
+  final String? arabicWord;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,7 @@ class LetterGlyphStep extends StatelessWidget {
                   onPressed: () => context.pop(),
                 ),
               ),
-              LetterReviewCard(letterName: letterName),
+              LetterReviewCard(letterName: letterName, arabicWord: arabicWord),
               Expanded(
                 child: Center(
                   child: Padding(

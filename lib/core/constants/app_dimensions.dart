@@ -93,6 +93,19 @@ class AppDimensions {
   static const double quizGlyphSize = 56;
   static const double quizStatementGlyphSize = 88;
 
+  // Number quiz screens (Level 3).
+  static const double numberStatementGlyphSize = 96;
+  static const double numberBannerGlyphSize = 72;
+  static const double numberOptionSize = 56;
+  static const double numberOptionGlyphSize = 22;
+  static const double numberGridSpacing = 12;
+  static const int numberGridColumns = 3;
+  static const double numberLegoSize = 56;
+  static const double numberWriteHeight = 220;
+  static const double numberIllustrationHeight = 200;
+  static const double numberPronounceHeight = 130;
+  static const double numberPronounceGlyphSize = 80;
+
   // Tashkeel lesson screens.
   static const double tashkeelGlyphHeight = 280;
   static const double tashkeelPieceSize = 64;

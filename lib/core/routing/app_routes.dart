@@ -14,9 +14,11 @@ class AppRoutes {
   static const String letterReview = '/game/letter-review';
   static const String letterTrace = '/game/letter-trace';
   static const String letterQuiz = '/game/letter-quiz';
+  static const String numberQuiz = '/game/number-quiz';
   static const String wordLesson = '/game/word-lesson';
   static const String tashkeelLesson = '/game/tashkeel-lesson';
   static const String lessonIntro = '/lesson/intro';
+  static const String traceIntro = '/lesson/trace-intro';
 
   // Sub-routes nested inside shell branches. Relative paths (no leading /).
   static const String profileSettings = 'settings';
@@ -36,9 +38,11 @@ class AppRoutes {
   static const String letterReviewName = 'letterReview';
   static const String letterTraceName = 'letterTrace';
   static const String letterQuizName = 'letterQuiz';
+  static const String numberQuizName = 'numberQuiz';
   static const String wordLessonName = 'wordLesson';
   static const String tashkeelLessonName = 'tashkeelLesson';
   static const String lessonIntroName = 'lessonIntro';
+  static const String traceIntroName = 'traceIntro';
 
   static const String profileSettingsName = 'profileSettings';
   static const String settingsFeedbackName = 'settingsFeedback';
