@@ -22,6 +22,7 @@ class WordLessonState extends Equatable {
     this.selectedImageOptionId,
     this.wasWrong = false,
     this.hearts = 6,
+    this.mistakes = 0,
     this.audioUnavailable = false,
     this.errorMessage,
   });
@@ -47,10 +48,21 @@ class WordLessonState extends Equatable {
 
   final int hearts;
 
+  /// Wrong answers so far, used for the accuracy on the results screen.
+  final int mistakes;
+
   /// Set once a play attempt found no Arabic voice on the device.
   final bool audioUnavailable;
 
   final String? errorMessage;
+
+  /// Share of the three questions answered right first try, 0..1.
+  /// The "repeat" step is not scored — there is nothing to get wrong.
+  double get accuracy {
+    const scored = 3;
+    final right = (scored - mistakes).clamp(0, scored);
+    return right / scored;
+  }
 
   bool get isAudioCorrect =>
       selectedAudioOptionId != null &&
@@ -93,6 +105,7 @@ class WordLessonState extends Equatable {
     String? selectedImageOptionId,
     bool? wasWrong,
     int? hearts,
+    int? mistakes,
     bool? audioUnavailable,
     String? errorMessage,
   }) {
@@ -107,6 +120,7 @@ class WordLessonState extends Equatable {
       selectedImageOptionId: selectedImageOptionId ?? this.selectedImageOptionId,
       wasWrong: wasWrong ?? this.wasWrong,
       hearts: hearts ?? this.hearts,
+      mistakes: mistakes ?? this.mistakes,
       audioUnavailable: audioUnavailable ?? this.audioUnavailable,
       errorMessage: errorMessage ?? this.errorMessage,
     );
@@ -124,6 +138,7 @@ class WordLessonState extends Equatable {
         selectedImageOptionId,
         wasWrong,
         hearts,
+        mistakes,
         audioUnavailable,
         errorMessage,
       ];

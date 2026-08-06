@@ -1,6 +1,8 @@
 import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
+import '../../domain/entities/lesson_result.dart';
 import '../cubit/word_lesson_cubit.dart';
+import 'lesson_complete_page.dart';
 import '../widgets/game_top_bar.dart';
 import '../widgets/quiz_continue_button.dart';
 import '../widgets/word_audio_options_step.dart';
@@ -29,17 +31,6 @@ class _WordLessonView extends StatelessWidget {
 
   final String lessonId;
 
-  void _finish(BuildContext context) {
-    context.pushReplacementNamed(
-      AppRoutes.greatJobName,
-      queryParameters: {
-        'lessonId': lessonId,
-        'userName': 'Malak',
-        'nextRoute': AppRoutes.levelsName,
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +43,17 @@ class _WordLessonView extends StatelessWidget {
             case WordLessonStatus.error:
               return Center(child: Text(state.errorMessage ?? 'Error'));
             case WordLessonStatus.completed:
-              WidgetsBinding.instance.addPostFrameCallback((_) => _finish(context));
-              return const AppLoading();
+              // The lesson ends on its own congratulations screen, tinted to
+              // the level, rather than handing back to GreatJob.
+              return LessonCompletePage(
+                userName: 'Malak',
+                levelType: levelTypeForLessonId(lessonId),
+                result: LessonResult(
+                  points: 6000,
+                  accuracy: state.accuracy,
+                  elapsed: context.read<WordLessonCubit>().elapsed,
+                ),
+              );
             case WordLessonStatus.repeat:
             case WordLessonStatus.chooseAudio:
             case WordLessonStatus.chooseText:

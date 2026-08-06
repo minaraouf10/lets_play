@@ -32,6 +32,14 @@ extension LevelTypeColor on LevelType {
   /// 1-based position among the 5 levels (L1 Letters .. L5 Sentences).
   int get number => LevelType.values.indexOf(this) + 1;
 
+  /// Character illustration on the level's "You'll learn" intro card.
+  /// Levels without their own artwork reuse the generic lesson image.
+  String get introImage => switch (this) {
+        LevelType.numbers => AppAssets.levelThreeIntroImage,
+        LevelType.words => AppAssets.levelFourIntroImage,
+        _ => AppAssets.lessonImage,
+      };
+
   /// Vertical tint-to-shade gradient used behind the lesson intro screens.
   Gradient get gradient => LinearGradient(
         begin: Alignment.topCenter,

@@ -36,6 +36,12 @@ class LessonIntroLessonStep extends StatelessWidget {
               LessonInfoBox(
                 lessonNumber: lessonNumber,
                 levelNumber: levelType.number,
+                // Level 4 shows the card in its own green; the earlier
+                // levels keep the brand yellow.
+                color: levelType == LevelType.words ? levelType.color : null,
+                textColor: levelType == LevelType.words
+                    ? AppColors.textOnColor
+                    : null,
               ),
               const SizedBox(height: AppDimensions.spaceLg),
               SizedBox(

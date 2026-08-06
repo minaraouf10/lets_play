@@ -33,9 +33,22 @@ class AppAssets {
   static const String greatJobCharacter =
       '$_homeIcons/great_job_image.png';
 
+  // Level 4 (Words) grammar flow — "pick the picture" question.
+  //
+  // No door/house artwork ships yet, so these point at the closest existing
+  // intro icons. Swap the paths once the real assets land; nothing else
+  // needs to change.
+  static const String grammarDoorImage = reasonFutureTrips;
+  static const String grammarHouseImage = reasonConnections;
+
   // Level 3 (Numbers) lesson flow.
   static const String _level3 = 'assets/images/level3';
   static const String levelThreeIntroImage = '$_level3/image_level_3.svg';
+
+  /// Level 4's own intro artwork has not been supplied yet, so the level
+  /// card falls back to the generic lesson illustration. Point this at the
+  /// real file once it lands.
+  static const String levelFourIntroImage = lessonImage;
 
   // Word lesson flow.
   static const String fathersImage = '$_homeIcons/fathers_image.svg';

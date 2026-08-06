@@ -106,6 +106,17 @@ class AppDimensions {
   static const double numberPronounceHeight = 130;
   static const double numberPronounceGlyphSize = 80;
 
+  // Level 4 grammar screens.
+  static const double grammarTypeAspectRatio = 2.2;
+  static const double grammarTileAspectRatio = 1.6;
+  static const double grammarWordBannerHeight = 120;
+  static const double grammarWordGlyphSize = 56;
+  static const double grammarSignTileSize = 72;
+  static const double grammarStatementGlyphSize = 72;
+  static const double grammarStatementPhraseSize = 40;
+  static const double grammarCategoryBannerHeight = 130;
+  static const double grammarCategoryGlyphSize = 56;
+
   // Tashkeel lesson screens.
   static const double tashkeelGlyphHeight = 280;
   static const double tashkeelPieceSize = 64;

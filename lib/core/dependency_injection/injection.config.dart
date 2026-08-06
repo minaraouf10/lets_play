@@ -45,6 +45,8 @@ import '../../modules/home/games/domain/usecases/get_letter_puzzle_usecase.dart'
     as _i447;
 import '../../modules/home/games/domain/usecases/save_game_result_usecase.dart'
     as _i778;
+import '../../modules/home/games/presentation/cubit/grammar_lesson_cubit.dart'
+    as _i707;
 import '../../modules/home/games/presentation/cubit/letter_game_cubit.dart'
     as _i439;
 import '../../modules/home/games/presentation/cubit/letter_quiz_cubit.dart'
@@ -178,6 +180,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i74.LeaderboardLocalDataSource>(
       () => _i74.LeaderboardLocalDataSourceImpl(),
+    );
+    gh.factory<_i707.GrammarLessonCubit>(
+      () => _i707.GrammarLessonCubit(gh<_i468.LetterAudioService>()),
     );
     gh.factory<_i801.TashkeelLessonCubit>(
       () => _i801.TashkeelLessonCubit(gh<_i468.LetterAudioService>()),

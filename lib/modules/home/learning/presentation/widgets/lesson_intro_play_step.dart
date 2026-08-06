@@ -1,4 +1,5 @@
 import '../../../../../core/utils/app_imports.dart';
+import '../../../games/data/datasources/grammar_data.dart';
 
 /// "Get ready to play" card shown before a brick round starts.
 ///
@@ -20,11 +21,15 @@ class LessonIntroPlayStep extends StatelessWidget {
 
   bool get _isWordLesson => levelType == LevelType.words;
 
-  String get _playRouteName => traceMode
-      ? AppRoutes.letterTraceName
-      : _isWordLesson
-          ? AppRoutes.wordLessonName
-          : AppRoutes.letterGameName;
+  /// Word lessons that have a grammar section start there and hand off to
+  /// the word steps themselves; the rest go straight to their game.
+  String get _playRouteName {
+    if (traceMode) return AppRoutes.letterTraceName;
+    if (!_isWordLesson) return AppRoutes.letterGameName;
+    return hasGrammarLesson(lessonId)
+        ? AppRoutes.grammarLessonName
+        : AppRoutes.wordLessonName;
+  }
 
   String get _subject => switch (levelType) {
         LevelType.words => 'word',

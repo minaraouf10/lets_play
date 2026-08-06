@@ -50,6 +50,7 @@ export '../../modules/home/games/presentation/pages/letter_trace_page.dart';
 export '../../modules/home/games/presentation/pages/letter_quiz_page.dart';
 export '../../modules/home/games/presentation/pages/number_quiz_page.dart';
 export '../../modules/home/games/presentation/pages/word_lesson_page.dart';
+export '../../modules/home/games/presentation/pages/grammar_lesson_page.dart';
 export '../../modules/home/games/presentation/pages/tashkeel_lesson_page.dart';
 export '../../modules/home/learning/presentation/pages/lesson_intro_page.dart';
 export '../../modules/onboarding/presentation/pages/onboarding_page.dart';

@@ -8,19 +8,29 @@ class LessonInfoBox extends StatelessWidget {
     super.key,
     required this.lessonNumber,
     required this.levelNumber,
+    this.color,
+    this.textColor,
   });
 
   final int lessonNumber;
   final int levelNumber;
 
+  /// Card fill. Defaults to the brand yellow used by Levels 1–3.
+  final Color? color;
+
+  /// Text colour on the card. Defaults to dark ink for the yellow fill.
+  final Color? textColor;
+
   @override
   Widget build(BuildContext context) {
+    final onCard = textColor ?? AppColors.textPrimary;
+
     return Container(
       height: 150,
       width: double.infinity,
       padding: const EdgeInsets.all(AppDimensions.spaceMd),
       decoration: BoxDecoration(
-        color: AppColors.splashYellow,
+        color: color ?? AppColors.splashYellow,
         borderRadius: BorderRadius.circular(AppDimensions.radiusSm),
         border: Border.all(
           color: AppColors.ink,
@@ -43,7 +53,10 @@ class LessonInfoBox extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Lesson', style: AppTextStyles.headingMedium),
+                Text(
+                  'Lesson',
+                  style: AppTextStyles.headingMedium.copyWith(color: onCard),
+                ),
                 const SizedBox(width: AppDimensions.spaceSm),
                 Container(
                   padding: const EdgeInsets.symmetric(
@@ -62,9 +75,10 @@ class LessonInfoBox extends StatelessWidget {
               ],
             ),
             const SizedBox(height: AppDimensions.spaceXs),
-            Text('Level $levelNumber', style: AppTextStyles.bodyMedium.copyWith(
-              color: AppColors.textPrimary
-            )),
+            Text(
+              'Level $levelNumber',
+              style: AppTextStyles.bodyMedium.copyWith(color: onCard),
+            ),
           ],
         ),
       ),

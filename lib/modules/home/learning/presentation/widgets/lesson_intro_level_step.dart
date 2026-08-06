@@ -32,13 +32,14 @@ class LessonIntroLevelStep extends StatelessWidget {
               ),
               Expanded(
                 child: SvgPicture.asset(
-                  AppAssets.levelThreeIntroImage,
+                  levelType.introImage,
                   fit: BoxFit.contain,
                 ),
               ),
               const SizedBox(height: AppDimensions.spaceLg),
               _ObjectivesCard(
                 levelNumber: levelType.number,
+                badgeColor: levelType.color,
                 objectives: objectives,
               ),
               const SizedBox(height: AppDimensions.spaceLg),
@@ -77,9 +78,16 @@ class LessonIntroLevelStep extends StatelessWidget {
 /// White neo-brutalist card: "Level N" with a badged number, then a checklist
 /// of what the level teaches.
 class _ObjectivesCard extends StatelessWidget {
-  const _ObjectivesCard({required this.levelNumber, required this.objectives});
+  const _ObjectivesCard({
+    required this.levelNumber,
+    required this.badgeColor,
+    required this.objectives,
+  });
 
   final int levelNumber;
+
+  /// Fills the badge around the level number, matching the level's colour.
+  final Color badgeColor;
   final List<String> objectives;
 
   @override
@@ -117,7 +125,7 @@ class _ObjectivesCard extends StatelessWidget {
                   horizontal: AppDimensions.spaceSm,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.levelNumbers,
+                  color: badgeColor,
                   border: Border.all(
                     color: AppColors.ink,
                     width: AppDimensions.neoBorderWidthSm,

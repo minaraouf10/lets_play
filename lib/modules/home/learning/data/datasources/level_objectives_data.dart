@@ -9,6 +9,12 @@ const Map<LevelType, List<String>> kLevelObjectives = {
     'Writing the number',
     'Pronunciation',
   ],
+  LevelType.words: [
+    'Forming words',
+    'Writing words',
+    'Pronunciation',
+    'Dialogue',
+  ],
 };
 
 List<String> objectivesFor(LevelType type) => kLevelObjectives[type] ?? const [];

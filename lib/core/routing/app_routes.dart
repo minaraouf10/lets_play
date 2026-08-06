@@ -16,6 +16,7 @@ class AppRoutes {
   static const String letterQuiz = '/game/letter-quiz';
   static const String numberQuiz = '/game/number-quiz';
   static const String wordLesson = '/game/word-lesson';
+  static const String grammarLesson = '/game/grammar-lesson';
   static const String tashkeelLesson = '/game/tashkeel-lesson';
   static const String lessonIntro = '/lesson/intro';
   static const String traceIntro = '/lesson/trace-intro';
@@ -40,6 +41,7 @@ class AppRoutes {
   static const String letterQuizName = 'letterQuiz';
   static const String numberQuizName = 'numberQuiz';
   static const String wordLessonName = 'wordLesson';
+  static const String grammarLessonName = 'grammarLesson';
   static const String tashkeelLessonName = 'tashkeelLesson';
   static const String lessonIntroName = 'lessonIntro';
   static const String traceIntroName = 'traceIntro';

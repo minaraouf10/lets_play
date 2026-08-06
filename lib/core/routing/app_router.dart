@@ -107,6 +107,13 @@ class AppRouter {
           ),
         ),
         GoRoute(
+          path: AppRoutes.grammarLesson,
+          name: AppRoutes.grammarLessonName,
+          builder: (context, state) => GrammarLessonPage(
+            lessonId: state.uri.queryParameters['lessonId'] ?? '',
+          ),
+        ),
+        GoRoute(
           path: AppRoutes.tashkeelLesson,
           name: AppRoutes.tashkeelLessonName,
           builder: (context, state) => TashkeelLessonPage(

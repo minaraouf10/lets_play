@@ -34,6 +34,16 @@ class AppColors {
   static const Color heart = Color(0xFFE53935);
   static const Color coin = Color(0xFFFFC400);
 
+  // Level 4 grammar screens.
+  /// The vivid blue behind "انواع الكلمات" / "انواع الاسم" and the word card.
+  static const Color grammarBanner = Color(0xFF0114FF);
+
+  /// Light grey panel the reference rows and answer tiles sit on.
+  static const Color grammarPanel = Color(0xFFF4F4F4);
+
+  /// Brown-grey used for the English gloss under each Arabic term.
+  static const Color grammarGloss = Color(0xFF8A6D3B);
+
   // Auth & Onboarding.
   static const Color loginBackground = Color(0xFF1400FF);
   static const Color accentCyan = Color(0xFF00E5D0);

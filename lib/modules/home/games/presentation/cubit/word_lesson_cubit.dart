@@ -16,6 +16,15 @@ class WordLessonCubit extends Cubit<WordLessonState> {
   static const Duration recordingDuration =
       Duration(seconds: AppDimensions.wordRecordingSeconds);
 
+  /// Started when the lesson loads so the results screen can report a
+  /// duration.
+  DateTime? _startedAt;
+
+  /// How long the lesson took, for the results screen.
+  Duration get elapsed => _startedAt == null
+      ? Duration.zero
+      : DateTime.now().difference(_startedAt!);
+
   Future<void> load(String lessonId) async {
     emit(const WordLessonState(status: WordLessonStatus.loading));
     final lesson = wordLessonFor(lessonId);
@@ -26,6 +35,7 @@ class WordLessonCubit extends Cubit<WordLessonState> {
       ));
       return;
     }
+    _startedAt = DateTime.now();
     emit(WordLessonState(status: WordLessonStatus.repeat, lesson: lesson));
   }
 
@@ -101,6 +111,7 @@ class WordLessonCubit extends Cubit<WordLessonState> {
     if (optionId != correctId) {
       emit(next.copyWith(
         hearts: (state.hearts - 1).clamp(0, state.hearts),
+        mistakes: state.mistakes + 1,
         wasWrong: true,
       ));
       return;
