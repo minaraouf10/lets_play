@@ -1,6 +1,6 @@
 {
-    "name": "game_test",
-    "short_name": "game_test",
+    "name": "lets_play",
+    "short_name": "lets_play",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

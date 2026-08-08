@@ -15,6 +15,15 @@ class LessonsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Arabic reads right to left, so the first lesson belongs in the
+    // top-right cell and each row fills leftward.
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: _buildGrid(context),
+    );
+  }
+
+  Widget _buildGrid(BuildContext context) {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),

@@ -2,11 +2,11 @@ import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
 import '../../data/datasources/number_data.dart';
 import '../cubit/letter_trace_cubit.dart';
-import '../widgets/game_bottom_bar.dart';
-import '../widgets/game_result_overlay.dart';
-import '../widgets/game_stage_bricks.dart';
-import '../widgets/game_top_bar.dart';
-import '../widgets/trace_canvas.dart';
+import '../widgets/common/game_bottom_bar.dart';
+import '../widgets/common/game_result_overlay.dart';
+import '../widgets/common/game_stage_bricks.dart';
+import '../widgets/common/game_top_bar.dart';
+import '../widgets/puzzle/trace_canvas.dart';
 
 /// "Trace the letter" mode: the letter is shown as empty outlined cells and
 /// the player drags across them to draw it in bricks.
@@ -54,7 +54,7 @@ class _LetterTraceView extends StatelessWidget {
                           onClose: () => context.pop(),
                         ),
                         const SizedBox(height: AppDimensions.spaceSm),
-                        const GameStageBricks(),
+                        GameStageBricks(lessonId: puzzle.lessonId),
                         const SizedBox(height: AppDimensions.spaceMd),
                         Expanded(
                           child: TraceCanvas(

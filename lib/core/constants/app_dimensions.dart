@@ -75,8 +75,23 @@ class AppDimensions {
   static const double gameCellSize = 40;
   static const double gameCellGap = 2;
   static const double gameSnapTolerance = 34;
-  static const double gameStudSize = 9;
   static const double gameStudInset = 5;
+
+  /// Studs are drawn flat on the brick face — the brick is seen straight-on,
+  /// so a stud reads as a ring rather than a cylinder. Sized as a fraction of
+  /// the cell so it scales with whatever pitch a canvas renders at.
+  static const double gameStudDiameterRatio = 0.52;
+
+  /// Width of the ring outlining each stud.
+  static const double gameStudRingWidth = 1.2;
+
+  /// Corner rounding on the brick body. Kept small: a real brick face is
+  /// square with barely-softened corners.
+  static const double gameBrickRadius = 2;
+
+  /// Height of one card on the "letter forms" screen. Fixed so the three
+  /// cards stay the same size whatever the screen height.
+  static const double letterFormTileHeight = 200;
   static const double gameDotSpacing = 16;
   static const double gameDotRadius = 1;
   static const double gameProgressHeight = 14;

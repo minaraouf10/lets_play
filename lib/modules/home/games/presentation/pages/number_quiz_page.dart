@@ -2,9 +2,9 @@ import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
 import '../../domain/entities/lesson_result.dart';
 import '../cubit/number_quiz_cubit.dart';
-import '../widgets/game_top_bar.dart';
-import '../widgets/number_quiz_steps.dart';
-import '../widgets/quiz_continue_button.dart';
+import '../widgets/common/game_top_bar.dart';
+import '../widgets/number/number_quiz_steps.dart';
+import '../widgets/quiz/quiz_continue_button.dart';
 import 'lesson_complete_page.dart';
 
 /// Six-question quiz that closes a Level 3 lesson, shown after the number has

@@ -2,11 +2,11 @@ import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
 import '../../data/datasources/tashkeel_data.dart';
 import '../cubit/letter_game_cubit.dart';
-import '../widgets/game_bottom_bar.dart';
-import '../widgets/game_result_overlay.dart';
-import '../widgets/game_stage_bricks.dart';
-import '../widgets/game_top_bar.dart';
-import '../widgets/puzzle_canvas.dart';
+import '../widgets/common/game_bottom_bar.dart';
+import '../widgets/common/game_result_overlay.dart';
+import '../widgets/common/game_stage_bricks.dart';
+import '../widgets/common/game_top_bar.dart';
+import '../widgets/puzzle/puzzle_canvas.dart';
 
 class LetterGamePage extends StatelessWidget {
   const LetterGamePage({super.key, required this.lessonId});
@@ -52,7 +52,7 @@ class _LetterGameView extends StatelessWidget {
                           onClose: () => context.pop(),
                         ),
                         const SizedBox(height: AppDimensions.spaceSm),
-                        const GameStageBricks(),
+                        GameStageBricks(lessonId: puzzle.lessonId),
                         const SizedBox(height: AppDimensions.spaceMd),
                         Expanded(
                           child: PuzzleCanvas(puzzle: puzzle, state: state),

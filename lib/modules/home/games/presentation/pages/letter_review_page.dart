@@ -2,10 +2,10 @@ import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
 import '../../data/datasources/number_data.dart';
 import '../cubit/letter_review_cubit.dart';
-import '../widgets/letter_bricks_step.dart';
-import '../widgets/letter_forms_step.dart';
-import '../widgets/letter_glyph_step.dart';
-import '../widgets/number_sound_step.dart';
+import '../widgets/letter_review/letter_bricks_step.dart';
+import '../widgets/letter_review/letter_forms_step.dart';
+import '../widgets/letter_review/letter_glyph_step.dart';
+import '../widgets/number/number_sound_step.dart';
 
 /// Post-game "letter review" flow shown after [GreatJobPage]: the plain
 /// glyph, then the assembled bricks, then the letter forms overview.

@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:game_test/modules/home/games/data/datasources/games_local_datasource.dart';
-import 'package:game_test/modules/home/games/data/datasources/number_data.dart';
-import 'package:game_test/modules/home/learning/data/datasources/learning_local_datasource.dart';
-import 'package:game_test/modules/home/learning/domain/entities/lesson_entity.dart';
+import 'package:lets_play/modules/home/games/data/datasources/games_local_datasource.dart';
+import 'package:lets_play/modules/home/games/data/datasources/number_data.dart';
+import 'package:lets_play/modules/home/learning/data/datasources/learning_local_datasource.dart';
+import 'package:lets_play/modules/home/learning/domain/entities/lesson_entity.dart';
 
 void main() {
   group('quiz option selection', () {

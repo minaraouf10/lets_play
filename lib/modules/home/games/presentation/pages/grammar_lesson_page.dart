@@ -2,9 +2,9 @@ import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
 import '../../domain/entities/grammar_lesson.dart';
 import '../cubit/grammar_lesson_cubit.dart';
-import '../widgets/game_top_bar.dart';
-import '../widgets/grammar_steps.dart';
-import '../widgets/quiz_continue_button.dart';
+import '../widgets/common/game_top_bar.dart';
+import '../widgets/grammar/grammar_steps.dart';
+import '../widgets/quiz/quiz_continue_button.dart';
 
 /// The Level 4 grammar section that opens a word lesson: what the word types
 /// are, picking nouns out of a set, and matching a word to its picture.

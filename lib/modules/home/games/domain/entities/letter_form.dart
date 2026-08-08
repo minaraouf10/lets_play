@@ -11,6 +11,7 @@ class LetterForm extends Equatable {
   const LetterForm({
     required this.type,
     required this.label,
+    required this.glyph,
     required this.rows,
     required this.cols,
     required this.bricks,
@@ -18,6 +19,12 @@ class LetterForm extends Equatable {
 
   final LetterFormType type;
   final String label;
+
+  /// How the letter is actually written in this position, with the joining
+  /// tatweel where it connects — "أـ" initial, "ـا" final. Shown in the tile
+  /// so the child reads the written form beside the brick drawing.
+  final String glyph;
+
   final int rows;
   final int cols;
 
@@ -25,5 +32,5 @@ class LetterForm extends Equatable {
   final List<PuzzleBrick> bricks;
 
   @override
-  List<Object?> get props => [type, label, rows, cols, bricks];
+  List<Object?> get props => [type, label, glyph, rows, cols, bricks];
 }

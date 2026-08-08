@@ -15,11 +15,24 @@ class AppTheme {
         surface: AppColors.surface,
         error: AppColors.error,
       ),
-      textTheme: base.textTheme.copyWith(
-        headlineLarge: AppTextStyles.headingLarge,
-        headlineMedium: AppTextStyles.headingMedium,
-        bodyLarge: AppTextStyles.bodyLarge,
-        bodyMedium: AppTextStyles.bodyMedium,
+      // `apply` puts the typeface on every entry — including the ones not
+      // overridden below — so widgets that build a bare TextStyle, or read
+      // labelLarge/titleMedium, still get it. The Arabic fallback rides along
+      // so an Arabic glyph in any of those entries keeps its hamza/tashkeel.
+      textTheme: base.textTheme
+          .apply(
+            fontFamily: AppTextStyles.fontFamily,
+            fontFamilyFallback: AppTextStyles.fontFamilyFallback,
+          )
+          .copyWith(
+            headlineLarge: AppTextStyles.headingLarge,
+            headlineMedium: AppTextStyles.headingMedium,
+            bodyLarge: AppTextStyles.bodyLarge,
+            bodyMedium: AppTextStyles.bodyMedium,
+          ),
+      primaryTextTheme: base.primaryTextTheme.apply(
+        fontFamily: AppTextStyles.fontFamily,
+        fontFamilyFallback: AppTextStyles.fontFamilyFallback,
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,

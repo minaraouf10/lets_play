@@ -54,10 +54,13 @@ class LetterTile extends StatelessWidget {
             children: [
               Text(
                 lesson.glyph,
+                textDirection: TextDirection.rtl,
                 style: AppTextStyles.letterGlyph.copyWith(color: textColor),
               ),
               Text(
                 lesson.transliteration,
+                // Latin, so it keeps its own direction inside the RTL grid.
+                textDirection: TextDirection.ltr,
                 style: AppTextStyles.letterHint.copyWith(color: textColor),
               ),
             ],

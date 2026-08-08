@@ -2,15 +2,15 @@ import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
 import '../../data/datasources/letter_names_data.dart';
 import '../cubit/tashkeel_lesson_cubit.dart';
-import '../widgets/game_top_bar.dart';
-import '../widgets/quiz_continue_button.dart';
-import '../widgets/tashkeel_place_step.dart';
-import '../widgets/tashkeel_quiz_step.dart';
-import '../widgets/tashkeel_repeat_step.dart';
-import '../widgets/tashkeel_review_step.dart';
-import '../widgets/tashkeel_shape_match_step.dart';
-import '../widgets/tashkeel_word_build_step.dart';
-import '../widgets/tashkeel_word_repeat_step.dart';
+import '../widgets/common/game_top_bar.dart';
+import '../widgets/quiz/quiz_continue_button.dart';
+import '../widgets/tashkeel/tashkeel_place_step.dart';
+import '../widgets/tashkeel/tashkeel_quiz_step.dart';
+import '../widgets/tashkeel/tashkeel_repeat_step.dart';
+import '../widgets/tashkeel/tashkeel_review_step.dart';
+import '../widgets/tashkeel/tashkeel_shape_match_step.dart';
+import '../widgets/tashkeel/tashkeel_word_build_step.dart';
+import '../widgets/tashkeel/tashkeel_word_repeat_step.dart';
 import 'lesson_complete_page.dart';
 
 /// The Level 2 (tashkeel) lesson shown after the brick puzzle: review each

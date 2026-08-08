@@ -3,12 +3,12 @@ import '../../../../../core/widgets/app_loading.dart';
 import '../../domain/entities/lesson_result.dart';
 import '../cubit/word_lesson_cubit.dart';
 import 'lesson_complete_page.dart';
-import '../widgets/game_top_bar.dart';
-import '../widgets/quiz_continue_button.dart';
-import '../widgets/word_audio_options_step.dart';
-import '../widgets/word_image_choice_step.dart';
-import '../widgets/word_repeat_step.dart';
-import '../widgets/word_text_choice_step.dart';
+import '../widgets/common/game_top_bar.dart';
+import '../widgets/quiz/quiz_continue_button.dart';
+import '../widgets/word/word_audio_options_step.dart';
+import '../widgets/word/word_image_choice_step.dart';
+import '../widgets/word/word_repeat_step.dart';
+import '../widgets/word/word_text_choice_step.dart';
 
 /// The 4-step word lesson: hear it, pick it by sound, pick it by text,
 /// pick it by picture.

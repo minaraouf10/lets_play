@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:game_test/modules/home/games/data/datasources/grammar_data.dart';
-import 'package:game_test/modules/home/games/data/datasources/word_lessons_data.dart';
-import 'package:game_test/modules/home/games/domain/entities/grammar_lesson.dart';
+import 'package:lets_play/modules/home/games/data/datasources/grammar_data.dart';
+import 'package:lets_play/modules/home/games/data/datasources/word_lessons_data.dart';
+import 'package:lets_play/modules/home/games/domain/entities/grammar_lesson.dart';
 
 void main() {
   group('grammar lesson data', () {

@@ -2,10 +2,10 @@ import '../../../../../core/utils/app_imports.dart';
 import '../../../../../core/widgets/app_loading.dart';
 import '../../data/datasources/number_data.dart';
 import '../cubit/letter_quiz_cubit.dart';
-import '../widgets/game_top_bar.dart';
-import '../widgets/quiz_continue_button.dart';
-import '../widgets/quiz_listen_step.dart';
-import '../widgets/quiz_statement_step.dart';
+import '../widgets/common/game_top_bar.dart';
+import '../widgets/quiz/quiz_continue_button.dart';
+import '../widgets/quiz/quiz_listen_step.dart';
+import '../widgets/quiz/quiz_statement_step.dart';
 
 /// Two-question quiz shown after the letter has been traced.
 class LetterQuizPage extends StatelessWidget {
