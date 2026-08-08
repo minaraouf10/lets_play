@@ -1,7 +1,7 @@
 import '../../../../core/utils/app_imports.dart';
 
 class RewardProgressBar extends StatelessWidget {
-  const RewardProgressBar({
+  const RewardProgressBar({super.key,
     required this.progress,
     this.color = AppColors.success,
   });
